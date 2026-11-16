@@ -1,0 +1,34 @@
+# Archivos de Excel y hojas de cálculo (datos sensibles / pesados)
+*.xlsx
+*.xls
+*.xlsm
+*.xlsb
+*.csv
+
+# Carpetas con bases de datos en bruto de Excel
+BASE DE DATOS F.C 2026/
+**/BASE DE DATOS F.C 2026/**
+
+# Python y entornos virtuales
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+
+# Variables de entorno y credenciales
+.env
+!.env.example
+
+# IDEs y sistemas operativos
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+Desktop.ini
+.DS_Store

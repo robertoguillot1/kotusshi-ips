@@ -1,0 +1,249 @@
+/* =============================================================================
+   SISTEMA DE VIGILANCIA NUTRICIONAL Y SEGUIMIENTO DNT — IPSI KOTTUSHI SAO ANA>A
+   HOJA DE ESTILOS INSTITUCIONAL Y SISTEMA RESPONSIVO FLUIDO (MÓVIL, TABLET Y PC)
+   ============================================================================= */
+
+:root {
+  --color-dnt-severa: #ef4444;
+  --color-dnt-moderada: #f97316;
+  --color-riesgo-dnt: #f59e0b;
+  --color-peso-adecuado: #10b981;
+  --color-sobrepeso: #8b5cf6;
+  --ipsi-primary: #0284c7;
+  --ipsi-dark: #0369a1;
+
+  /* Tipografías y espaciados proporcionales y fluidos */
+  --font-fluid-kpi: clamp(1.2rem, 2.5vw, 1.85rem);
+  --font-fluid-kpi-sm: clamp(0.95rem, 1.8vw, 1.35rem);
+  --font-fluid-label: clamp(0.65rem, 0.9vw, 0.75rem);
+  --font-fluid-sub: clamp(0.6rem, 0.8vw, 0.7rem);
+}
+
+/* =============================================================================
+   SISTEMA DE TIPOGRAFÍA FLUIDA Y PROPORCIONAL
+   ============================================================================= */
+.text-fluid-kpi {
+  font-size: var(--font-fluid-kpi);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-fluid-kpi-sm {
+  font-size: var(--font-fluid-kpi-sm);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-fluid-label {
+  font-size: var(--font-fluid-label);
+  line-height: 1.25;
+}
+
+.text-fluid-sub {
+  font-size: var(--font-fluid-sub);
+  line-height: 1.2;
+}
+
+/* =============================================================================
+   TARJETAS Y CONTENEDORES AUTOAJUSTABLES
+   ============================================================================= */
+.kpi-card {
+  min-width: 0; /* Previene desbordamiento en CSS Grid */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* Semáforo de estados clínicos */
+.badge-dnt-severa {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #f87171;
+}
+
+.badge-dnt-moderada {
+  background-color: #ffedd5;
+  color: #9a3412;
+  border: 1px solid #fb923c;
+}
+
+.badge-riesgo-dnt {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.badge-peso-adecuado {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #34d399;
+}
+
+.badge-sobrepeso {
+  background-color: #ede9fe;
+  color: #5b21b6;
+  border: 1px solid #a78bfa;
+}
+
+.badge-sin-dato {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+
+/* Transiciones y animaciones de pestañas */
+.tab-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+  opacity: 1;
+}
+
+/* =============================================================================
+   CONTENEDORES DE TABLAS RESPONSIVAS Y TÁCTILES
+   ============================================================================= */
+.responsive-table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  border-radius: 0.75rem;
+}
+
+/* Scrollbar prominente y visible para tablas clínicas */
+.table-scrollbar-visible {
+  overflow-x: auto !important;
+  scrollbar-width: thin;
+  scrollbar-color: #0284c7 #f1f5f9;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scrollbar-visible::-webkit-scrollbar {
+  height: 12px !important;
+  width: 8px !important;
+}
+
+.table-scrollbar-visible::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+.table-scrollbar-visible::-webkit-scrollbar-thumb {
+  background: #0284c7 !important;
+  border-radius: 6px;
+  border: 2px solid #f1f5f9;
+  cursor: grab;
+}
+
+.table-scrollbar-visible::-webkit-scrollbar-thumb:hover {
+  background: #0369a1 !important;
+}
+
+.table-scrollbar-visible::-webkit-scrollbar-thumb:active {
+  background: #0c4a6e !important;
+  cursor: grabbing;
+}
+
+/* Scrollbar personalizado */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* =============================================================================
+   ADAPTACIONES ESPECÍFICAS PARA TABLETS Y TELÉFONOS (MEDIA QUERIES)
+   ============================================================================= */
+
+/* Teléfonos y pantallas móviles (< 640px) */
+@media (max-width: 639px) {
+  body {
+    font-size: 13px;
+  }
+
+  .kpi-card {
+    padding: 0.65rem !important;
+  }
+
+  /* Reducir altura del header en móvil */
+  header .h-16 {
+    height: 3.75rem;
+  }
+
+  /* Tablas en móvil: fuente compacta */
+  table th, table td {
+    padding: 0.5rem 0.6rem !important;
+    font-size: 0.72rem !important;
+  }
+
+  /* Modales ocupan casi toda la pantalla */
+  .modal-dialog-responsive {
+    width: 96vw !important;
+    max-height: 94vh !important;
+    margin: 0.5rem auto !important;
+  }
+
+  /* Gráficos de Chart.js */
+  .chart-container-responsive {
+    min-height: 220px !important;
+    height: 240px !important;
+  }
+}
+
+/* Tabletas verticales y horizontales (640px a 1024px) */
+@media (min-width: 640px) and (max-width: 1024px) {
+  .kpi-card {
+    padding: 0.75rem !important;
+  }
+
+  /* Gráficos en tablet */
+  .chart-container-responsive {
+    min-height: 260px !important;
+    height: 280px !important;
+  }
+
+  /* Ajuste de filtros */
+  .filtros-grid-responsive {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Mejoras de usabilidad táctil */
+button, select, input {
+  touch-action: manipulation;
+}
+
+/* Conmutador de vistas de trazabilidad clínica */
+.vista-trazabilidad-btn {
+  user-select: none;
+  cursor: pointer;
+  white-space: nowrap;
+}

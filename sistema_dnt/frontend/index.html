@@ -1,0 +1,1993 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Vigilancia y Seguimiento Nutricional | IPSI Kottushi Sao Ana>a</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Estilos Personalizados -->
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🩺</text></svg>">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col font-sans antialiased">
+
+  <!-- CABECERA INSTITUCIONAL -->
+  <header class="bg-gradient-to-r from-sky-800 to-sky-950 text-white shadow-lg sticky top-0 z-40 border-b border-sky-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo y Título Proporcional -->
+        <div class="flex items-center space-x-2.5 sm:space-x-3 min-w-0 pr-2">
+          <div class="bg-white/10 p-1.5 sm:p-2 rounded-lg backdrop-blur-sm shrink-0">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-sky-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <h1 class="text-sm sm:text-base md:text-lg font-bold tracking-tight truncate">IPSI Kottushi Sao Ana>a</h1>
+            <p class="text-[10px] sm:text-xs text-sky-200 font-medium truncate">Vigilancia Nutricional y Seguimiento DNT • Res. 000115 de 2026</p>
+          </div>
+        </div>
+
+        <!-- Acciones Rápidas (Adaptadas para Móvil, Tablet y Desktop) -->
+        <div class="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
+          <!-- Búsqueda en Pantallas Medianas y Grandes (Ctrl + K) -->
+          <button onclick="abrirBusquedaGlobal()" class="hidden md:inline-flex items-center px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-medium bg-white/10 hover:bg-white/20 text-sky-100 border border-white/20 shadow-inner transition space-x-2" title="Buscar paciente por documento o nombre (Ctrl + K)">
+            <svg class="w-4 h-4 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <span class="text-sky-200 hidden lg:inline">Buscar paciente...</span>
+            <span class="text-sky-200 lg:hidden">Buscar</span>
+            <kbd class="font-mono text-[10px] bg-sky-950/70 px-1.5 py-0.5 rounded border border-sky-600/50 text-sky-300 font-bold">Ctrl K</kbd>
+          </button>
+
+          <!-- Botón de Búsqueda Compacto para Celulares y Tablets pequeñas -->
+          <button onclick="abrirBusquedaGlobal()" class="inline-flex md:hidden items-center justify-center p-2 rounded-lg text-xs font-medium bg-white/10 hover:bg-white/20 text-sky-100 border border-white/20 shadow-inner transition" title="Buscar paciente">
+            <svg class="w-4 h-4 text-sky-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </button>
+
+          <!-- Centro de Alertas de Rescate Nutricional -->
+          <button onclick="abrirModalAlertasRescate()" class="relative inline-flex items-center px-2.5 sm:px-3 py-1.5 rounded-md text-xs font-semibold bg-rose-600 hover:bg-rose-500 text-white shadow transition" title="Centro de Alertas Tempranas de Rescate Nutricional">
+            <span class="mr-1 sm:mr-1.5">🚨</span>
+            <span class="hidden sm:inline">Alertas Clínicas</span>
+            <span class="sm:hidden text-[11px]">Alertas</span>
+            <span id="badge-total-alertas" class="ml-1 sm:ml-1.5 px-1.5 py-0.2 bg-white text-rose-700 font-black rounded-full text-[10px]">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PESTAÑAS DE NAVEGACIÓN -->
+    <div class="bg-sky-900/60 border-t border-sky-700/60 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="flex space-x-2 sm:space-x-8 overflow-x-auto custom-scrollbar" aria-label="Tabs">
+          <button data-tab-target="tab-dashboard" class="text-sky-400 border-sky-400 font-bold whitespace-nowrap py-3 px-1 border-b-2 text-xs sm:text-sm flex items-center space-x-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+            <span>Tablero General</span>
+          </button>
+          <button data-tab-target="tab-notificados" class="text-slate-300 border-transparent hover:text-white whitespace-nowrap py-3 px-1 border-b-2 text-xs sm:text-sm flex items-center space-x-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+            <span>📋 Notificados (FT-003)</span>
+          </button>
+          <button data-tab-target="tab-casos" class="text-slate-300 border-transparent hover:text-white whitespace-nowrap py-3 px-1 border-b-2 text-xs sm:text-sm flex items-center space-x-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            <span>Casos en Seguimiento</span>
+          </button>
+          <button data-tab-target="tab-nuevo-caso" class="text-slate-300 border-transparent hover:text-white whitespace-nowrap py-3 px-1 border-b-2 text-xs sm:text-sm flex items-center space-x-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
+            <span>Notificar Nuevo Caso</span>
+          </button>
+          <button data-tab-target="tab-indicadores" class="text-slate-300 border-transparent hover:text-white whitespace-nowrap py-3 px-1 border-b-2 text-xs sm:text-sm flex items-center space-x-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+            <span>Indicadores Mensuales</span>
+          </button>
+          <button data-tab-target="tab-reportes-oficiales" class="text-slate-300 border-transparent hover:text-white whitespace-nowrap py-3 px-1 border-b-2 text-xs sm:text-sm flex items-center space-x-1.5">
+            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <span>📑 Centro de Reportes y Archivos</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL FLUIDO Y PROPORCIONAL -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6">
+
+    <!-- 1. PESTAÑA: TABLERO / DASHBOARD -->
+    <section id="tab-dashboard" class="tab-content active space-y-4 sm:space-y-6">
+      <!-- Tarjetas de Métricas Clave (KPIs Fluidos y Autoajustables) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3.5 md:gap-4">
+        <!-- Notificados -->
+        <div class="kpi-card bg-white p-3 sm:p-4 rounded-xl border border-slate-200 shadow-sm min-w-0">
+          <div class="flex items-center justify-between gap-1">
+            <span class="text-fluid-label font-bold text-slate-500 uppercase tracking-wider truncate">Total Notificados</span>
+            <span class="p-1 sm:p-1.5 bg-sky-50 text-sky-600 rounded-lg text-xs sm:text-sm shrink-0">📋</span>
+          </div>
+          <div class="mt-1.5 sm:mt-2 min-w-0">
+            <span id="kpi-notificados" class="text-fluid-kpi font-black text-slate-900 block">-</span>
+            <p class="text-fluid-sub text-slate-400 mt-0.5 truncate">Eventos 113 y 114</p>
+          </div>
+        </div>
+
+        <!-- En Seguimiento Activo -->
+        <div class="kpi-card bg-white p-3 sm:p-4 rounded-xl border border-slate-200 shadow-sm min-w-0">
+          <div class="flex items-center justify-between gap-1">
+            <span class="text-fluid-label font-bold text-sky-700 uppercase tracking-wider truncate">En Seguimiento</span>
+            <span class="p-1 sm:p-1.5 bg-sky-100 text-sky-700 rounded-lg text-xs sm:text-sm shrink-0">🩺</span>
+          </div>
+          <div class="mt-1.5 sm:mt-2 min-w-0">
+            <span id="kpi-seguimiento" class="text-fluid-kpi font-black text-sky-700 block">-</span>
+            <p class="text-fluid-sub text-sky-600/80 mt-0.5 truncate">Casos activos en ruta</p>
+          </div>
+        </div>
+
+        <!-- Casos Cerrados -->
+        <div class="kpi-card bg-white p-3 sm:p-4 rounded-xl border border-slate-200 shadow-sm min-w-0">
+          <div class="flex items-center justify-between gap-1">
+            <span class="text-fluid-label font-bold text-slate-500 uppercase tracking-wider truncate">Cerrados / Egresos</span>
+            <span class="p-1 sm:p-1.5 bg-slate-100 text-slate-600 rounded-lg text-xs sm:text-sm shrink-0">🏁</span>
+          </div>
+          <div class="mt-1.5 sm:mt-2 min-w-0">
+            <span id="kpi-cerrados" class="text-fluid-kpi font-black text-slate-700 block">-</span>
+            <p class="text-fluid-sub text-slate-400 mt-0.5 truncate">Recuperados / Edad</p>
+          </div>
+        </div>
+
+        <!-- Citas Vencidas Hoy -->
+        <div class="kpi-card bg-white p-3 sm:p-4 rounded-xl border border-rose-200 bg-rose-50/30 shadow-sm min-w-0">
+          <div class="flex items-center justify-between gap-1">
+            <span class="text-fluid-label font-bold text-rose-700 uppercase tracking-wider truncate">Citas Vencidas</span>
+            <span class="p-1 sm:p-1.5 bg-rose-100 text-rose-700 rounded-lg text-xs sm:text-sm shrink-0">⚠️</span>
+          </div>
+          <div class="mt-1.5 sm:mt-2 min-w-0">
+            <span id="kpi-citas-vencidas" class="text-fluid-kpi font-black text-rose-600 block">-</span>
+            <p class="text-fluid-sub text-rose-500 font-medium mt-0.5 truncate">Requieren llamada/rescate</p>
+          </div>
+        </div>
+
+        <!-- Alerta Edad >= 60 meses -->
+        <div class="kpi-card bg-white p-3 sm:p-4 rounded-xl border border-amber-200 bg-amber-50/30 shadow-sm min-w-0 col-span-2 sm:col-span-1">
+          <div class="flex items-center justify-between gap-1">
+            <span class="text-fluid-label font-bold text-amber-700 uppercase tracking-wider truncate">Edad ≥ 60 Meses</span>
+            <span class="p-1 sm:p-1.5 bg-amber-100 text-amber-700 rounded-lg text-xs sm:text-sm shrink-0">🎂</span>
+          </div>
+          <div class="mt-1.5 sm:mt-2 min-w-0">
+            <span id="kpi-alertas-edad" class="text-fluid-kpi font-black text-amber-700 block">-</span>
+            <p class="text-fluid-sub text-amber-600 font-medium mt-0.5 truncate">Egreso normativo de ruta</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gráficos Epidemiológicos del Tablero -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Donut Diagnóstico Nutricional -->
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col">
+          <h3 class="text-sm font-bold text-slate-800 mb-1">Distribución Diagnóstica Actual</h3>
+          <p class="text-xs text-slate-500 mb-4">Clasificación según último Z-Score (Res. 000115/2026)</p>
+          <div class="flex-1 flex items-center justify-center relative min-h-[260px]">
+            <canvas id="chart-diagnostico"></canvas>
+          </div>
+        </div>
+
+        <!-- Barras por Municipio -->
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col">
+          <h3 class="text-sm font-bold text-slate-800 mb-1">Casos por Municipio</h3>
+          <p class="text-xs text-slate-500 mb-4">Distribución geográfica territorial</p>
+          <div class="flex-1 flex items-center justify-center relative min-h-[260px]">
+            <canvas id="chart-municipios"></canvas>
+          </div>
+        </div>
+
+        <!-- Barras por EAPB -->
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col">
+          <h3 class="text-sm font-bold text-slate-800 mb-1">Aseguramiento (EAPB / EPS)</h3>
+          <p class="text-xs text-slate-500 mb-4">Población por entidad aseguradora</p>
+          <div class="flex-1 flex items-center justify-center relative min-h-[260px]">
+            <canvas id="chart-eapb"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- PESTAÑA: LIBRO OFICIAL DE NOTIFICADOS (FT-003) -->
+    <section id="tab-notificados" class="tab-content space-y-4">
+      <!-- Tarjetas KPI Fluidas del Libro de Notificados -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-8 gap-2 sm:gap-2.5">
+        <!-- Total Notificados -->
+        <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between min-w-0">
+          <span class="text-fluid-label font-bold text-slate-500 uppercase tracking-wider truncate">Total Notif.</span>
+          <div class="mt-1 min-w-0">
+            <span id="kpi-notif-total" class="text-fluid-kpi-sm font-black text-slate-900 block truncate">-</span>
+            <p class="text-fluid-sub text-slate-400 truncate">FT-003 Oficial</p>
+          </div>
+        </div>
+        <!-- Evento 113: DNT Aguda -->
+        <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-rose-200 bg-rose-50/20 shadow-sm flex flex-col justify-between min-w-0">
+          <span class="text-fluid-label font-bold text-rose-700 uppercase tracking-wider truncate">Ev. 113 (DNT)</span>
+          <div class="mt-1 min-w-0">
+            <span id="kpi-notif-113" class="text-fluid-kpi-sm font-black text-rose-700 block truncate">-</span>
+            <p class="text-fluid-sub text-rose-600/80 truncate">Aguda Mod/Sev</p>
+          </div>
+        </div>
+        <!-- Evento 114: Riesgo DNT -->
+        <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-amber-200 bg-amber-50/20 shadow-sm flex flex-col justify-between min-w-0">
+          <span class="text-fluid-label font-bold text-amber-700 uppercase tracking-wider truncate">Ev. 114 (Riesgo)</span>
+          <div class="mt-1 min-w-0">
+            <span id="kpi-notif-114" class="text-fluid-kpi-sm font-black text-amber-700 block truncate">-</span>
+            <p class="text-fluid-sub text-amber-600/80 truncate">Riesgo Agudo</p>
+          </div>
+        </div>
+        <!-- Con 1ra Atención -->
+        <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-emerald-200 bg-emerald-50/20 shadow-sm flex flex-col justify-between min-w-0">
+          <span class="text-fluid-label font-bold text-emerald-700 uppercase tracking-wider truncate">Con 1ra Aten.</span>
+          <div class="mt-1 min-w-0">
+            <span id="kpi-notif-con-atencion" class="text-fluid-kpi-sm font-black text-emerald-700 block truncate">-</span>
+            <p class="text-fluid-sub text-emerald-600/80 truncate">Ingreso a ruta</p>
+          </div>
+        </div>
+        <!-- Sin 1ra Atención (Pendientes) -->
+        <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-orange-200 bg-orange-50/20 shadow-sm flex flex-col justify-between min-w-0">
+          <span class="text-fluid-label font-bold text-orange-700 uppercase tracking-wider truncate">Sin 1ra Aten.</span>
+          <div class="mt-1 min-w-0">
+            <span id="kpi-notif-sin-atencion" class="text-fluid-kpi-sm font-black text-orange-600 block truncate">-</span>
+            <p class="text-fluid-sub text-orange-600/80 truncate">Pendientes cita</p>
+          </div>
+        </div>
+        <!-- Búsqueda GBAI -->
+        <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-sky-200 bg-sky-50/20 shadow-sm flex flex-col justify-between min-w-0">
+          <span class="text-fluid-label font-bold text-sky-700 uppercase tracking-wider truncate">Búsqueda GBAI</span>
+          <div class="mt-1 min-w-0">
+            <span id="kpi-notif-gbai" class="text-fluid-kpi-sm font-black text-sky-700 block truncate">-</span>
+            <p class="text-fluid-sub text-sky-600/80 truncate">En territorio</p>
+          </div>
+        </div>
+        <!-- En Seguimiento -->
+        <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-indigo-200 bg-indigo-50/20 shadow-sm flex flex-col justify-between min-w-0">
+          <span class="text-fluid-label font-bold text-indigo-700 uppercase tracking-wider truncate">En Seg. Activo</span>
+          <div class="mt-1 min-w-0">
+            <span id="kpi-notif-seguimiento" class="text-fluid-kpi-sm font-black text-indigo-700 block truncate">-</span>
+            <p class="text-fluid-sub text-indigo-600/80 truncate">Controles activos</p>
+          </div>
+        </div>
+        <!-- Cerrados -->
+        <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between min-w-0">
+          <span class="text-fluid-label font-bold text-slate-500 uppercase tracking-wider truncate">Cerrados</span>
+          <div class="mt-1 min-w-0">
+            <span id="kpi-notif-cerrados" class="text-fluid-kpi-sm font-black text-slate-700 block truncate">-</span>
+            <p class="text-fluid-sub text-slate-400 truncate">Recup./Norma</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra de Filtros, Búsqueda y Exportación -->
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-3">
+        <div class="flex flex-col lg:flex-row gap-3 items-center justify-between">
+          <!-- Búsqueda rápida -->
+          <div class="w-full lg:w-1/3 relative">
+            <input type="text" id="filtro-notif-busqueda" placeholder="Buscar por documento, menor, cuidador o cooperante..." class="w-full pl-9 pr-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+          
+          <!-- Botones de Acción -->
+          <div class="flex flex-wrap items-center gap-2 w-full lg:w-auto justify-end">
+            <button id="btn-limpiar-filtros-notif" class="text-xs font-semibold text-slate-600 hover:text-slate-900 px-3 py-2 rounded-lg border border-slate-200 hover:bg-slate-50 transition flex items-center space-x-1">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+              <span>Restablecer Filtros</span>
+            </button>
+            <button onclick="exportarNotificadosExcel()" class="inline-flex items-center px-3.5 py-2 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm transition">
+              <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+              </svg>
+              <span>Descargar Excel FT-003</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Selectores de filtrado detallado -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 pt-2 border-t border-slate-100">
+          <div>
+            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-0.5">Evento SIVIGILA</label>
+            <select id="filtro-notif-evento" class="w-full text-xs py-1.5 px-2 rounded border border-slate-200 bg-white focus:ring-1 focus:ring-sky-500">
+              <option value="">Todos los Eventos</option>
+              <option value="113">Evento 113: DNT Aguda</option>
+              <option value="114">Evento 114: Riesgo DNT</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-0.5">Primera Atención</label>
+            <select id="filtro-notif-atencion" class="w-full text-xs py-1.5 px-2 rounded border border-slate-200 bg-white focus:ring-1 focus:ring-sky-500">
+              <option value="">Todas (Con y Sin Atención)</option>
+              <option value="con">Con 1ra Atención Efectiva</option>
+              <option value="sin">Sin 1ra Atención (Pendiente)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-0.5">Municipio</label>
+            <select id="filtro-notif-municipio" class="w-full text-xs py-1.5 px-2 rounded border border-slate-200 bg-white focus:ring-1 focus:ring-sky-500">
+              <option value="">Todos los Municipios</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-0.5">Aseguradora (EAPB)</label>
+            <select id="filtro-notif-eapb" class="w-full text-xs py-1.5 px-2 rounded border border-slate-200 bg-white focus:ring-1 focus:ring-sky-500">
+              <option value="">Todas las EAPB</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold text-slate-500 uppercase mb-0.5">Estado del Caso</label>
+            <select id="filtro-notif-estado" class="w-full text-xs py-1.5 px-2 rounded border border-slate-200 bg-white focus:ring-1 focus:ring-sky-500">
+              <option value="">Todos los Estados</option>
+              <option value="En seguimiento">En seguimiento</option>
+              <option value="Cerrado">Cerrados</option>
+              <option value="En Busqueda">En Búsqueda</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabla Maestra de Notificados (Formato FT-003) -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+        <!-- Barra de Estado y Paginación Superior -->
+        <div class="p-3 bg-slate-50 border-b border-slate-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs text-slate-500">
+          <div class="flex items-center space-x-2">
+            <span id="contador-notif-mostrados" class="font-bold text-slate-800">Cargando notificaciones...</span>
+          </div>
+          <div class="flex items-center space-x-2 sm:space-x-3 text-xs">
+            <!-- Botones de Desplazamiento Horizontal Rápido -->
+            <div class="flex items-center space-x-1 bg-slate-200/80 p-0.5 rounded-lg border border-slate-300">
+              <button onclick="desplazarTabla('wrapper-tabla-notificados', -350)" class="px-2 py-0.5 text-xs font-bold text-slate-700 hover:text-sky-700 hover:bg-white rounded transition shadow-none hover:shadow-sm" title="Deslizar a la izquierda">
+                ◀
+              </button>
+              <button onclick="desplazarTabla('wrapper-tabla-notificados', 350)" class="px-2 py-0.5 text-xs font-bold text-slate-700 hover:text-sky-700 hover:bg-white rounded transition shadow-none hover:shadow-sm" title="Deslizar a la derecha">
+                ▶
+              </button>
+            </div>
+            <div class="flex items-center space-x-1">
+              <span class="text-slate-400">Mostrar:</span>
+              <select id="paginacion-notif-limite" class="py-1 px-2 rounded border border-slate-300 bg-white font-medium text-slate-700 text-xs">
+                <option value="25">25 filas</option>
+                <option value="50" selected>50 filas</option>
+                <option value="100">100 filas</option>
+                <option value="250">250 filas</option>
+              </select>
+            </div>
+            <!-- Controles de navegación de página -->
+            <div class="flex items-center space-x-1">
+              <button id="btn-pag-notif-ant" class="px-2.5 py-1 rounded border border-slate-300 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed font-semibold text-slate-700">◀ Anterior</button>
+              <span id="indicador-pag-notif" class="px-2 font-mono font-bold text-slate-800">1 / 1</span>
+              <button id="btn-pag-notif-sig" class="px-2.5 py-1 rounded border border-slate-300 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed font-semibold text-slate-700">Siguiente ▶</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Barra de Guía de Desplazamiento Horizontal Notificados -->
+        <div class="bg-sky-50 px-3.5 py-1.5 border-b border-sky-100 flex items-center justify-between text-xs text-sky-800">
+          <div class="flex items-center space-x-2">
+            <span class="text-sm">👉</span>
+            <span class="font-semibold">Tabla ancha (9 columnas):</span>
+            <span class="text-sky-600 hidden sm:inline">Desliza hacia la derecha para ver Captación, GBAI, 1ra Atención y Acciones</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button onclick="desplazarTabla('wrapper-tabla-notificados', 400)" class="text-xs font-bold text-sky-700 hover:text-sky-900 bg-white px-2 py-0.5 rounded border border-sky-200 hover:bg-sky-50 transition">
+              Deslizar a la derecha ▶
+            </button>
+          </div>
+        </div>
+
+        <!-- Tabla con scroll horizontal fluido -->
+        <div id="wrapper-tabla-notificados" class="responsive-table-wrapper table-scrollbar-visible">
+          <table class="w-full text-left text-xs border-collapse min-w-[1300px]">
+            <thead class="bg-slate-100 text-slate-700 uppercase font-bold text-[11px] border-b border-slate-200 sticky top-0 z-10">
+              <tr>
+                <th class="py-2.5 px-3 whitespace-nowrap">Caso / Paciente</th>
+                <th class="py-2.5 px-3 whitespace-nowrap">Ubicación & EAPB</th>
+                <th class="py-2.5 px-3 whitespace-nowrap">Contacto Cuidador</th>
+                <th class="py-2.5 px-3 whitespace-nowrap">Notificación</th>
+                <th class="py-2.5 px-3 whitespace-nowrap">Captación Inicial</th>
+                <th class="py-2.5 px-3 whitespace-nowrap">Búsqueda GBAI</th>
+                <th class="py-2.5 px-3 whitespace-nowrap">1ra Atención IPSI</th>
+                <th class="py-2.5 px-3 whitespace-nowrap text-center">Estado</th>
+                <th class="py-2.5 px-3 text-right whitespace-nowrap">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-notificados-body" class="divide-y divide-slate-100 text-slate-800">
+              <tr>
+                <td colspan="9" class="text-center py-8 text-slate-500">Cargando libro de notificaciones...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Barra Inferior de Paginación -->
+        <div class="p-3 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-500">
+          <span id="contador-notif-inferior" class="text-slate-600 font-medium">Mostrando 0 de 0 registros</span>
+          <div class="flex items-center space-x-1">
+            <button id="btn-pag-notif-ant-inf" class="px-2.5 py-1 rounded border border-slate-300 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed font-semibold text-slate-700">◀ Anterior</button>
+            <span id="indicador-pag-notif-inf" class="px-2 font-mono font-bold text-slate-800">1 / 1</span>
+            <button id="btn-pag-notif-sig-inf" class="px-2.5 py-1 rounded border border-slate-300 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed font-semibold text-slate-700">Siguiente ▶</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- 2. PESTAÑA: CASOS EN SEGUIMIENTO -->
+    <section id="tab-casos" class="tab-content space-y-4">
+      <!-- Barra de Filtros y Búsqueda -->
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm space-y-3">
+        <div class="flex flex-col sm:flex-row gap-3 items-center justify-between">
+          <div class="w-full sm:w-1/3 relative">
+            <input type="text" id="filtro-busqueda" placeholder="Buscar por documento o nombre..." class="w-full pl-9 pr-3 py-2 text-xs sm:text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
+            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+          <div class="flex items-center space-x-2">
+            <label class="flex items-center space-x-2 text-xs font-semibold text-rose-700 bg-rose-50 px-3 py-2 rounded-lg border border-rose-200 cursor-pointer hover:bg-rose-100 transition">
+              <input type="checkbox" id="filtro-citas-vencidas" class="rounded text-rose-600 focus:ring-rose-500">
+              <span>Solo Citas Vencidas</span>
+            </label>
+            <button id="btn-limpiar-filtros" class="text-xs font-medium text-slate-500 hover:text-slate-800 px-3 py-2 rounded-lg border border-slate-200 hover:bg-slate-50 transition">
+              Limpiar
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 border-t border-slate-100">
+          <select id="filtro-estado" class="text-xs py-1.5 px-2 rounded border border-slate-200 bg-white">
+            <option value="">Todos los Estados</option>
+            <option value="En seguimiento" selected>En seguimiento</option>
+            <option value="Cerrado">Cerrados</option>
+          </select>
+          <select id="filtro-municipio" class="text-xs py-1.5 px-2 rounded border border-slate-200 bg-white">
+            <option value="">Todos los Municipios</option>
+          </select>
+          <select id="filtro-eapb" class="text-xs py-1.5 px-2 rounded border border-slate-200 bg-white">
+            <option value="">Todas las EAPB</option>
+          </select>
+          <select id="filtro-clasificacion" class="text-xs py-1.5 px-2 rounded border border-slate-200 bg-white">
+            <option value="">Todas las Clasificaciones</option>
+            <option value="severa">Desnutrición Aguda Severa</option>
+            <option value="moderada">Desnutrición Aguda Moderada</option>
+            <option value="riesgo">Riesgo de Desnutrición Aguda</option>
+            <option value="adecuado">Peso Adecuado para la Talla</option>
+            <option value="sobrepeso">Sobrepeso / Obesidad</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Tabla Principal de Casos -->
+      <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="p-3 bg-slate-50 border-b border-slate-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs text-slate-500">
+          <div class="flex items-center space-x-2">
+            <span id="contador-casos-mostrados" class="font-bold text-slate-800">Cargando...</span>
+            <span id="badge-filtro-vencidas" class="hidden px-2 py-0.5 rounded-full text-[11px] font-bold bg-rose-100 text-rose-700 border border-rose-300">
+              🚨 Citas Vencidas
+            </span>
+          </div>
+          <div class="flex items-center space-x-2 sm:space-x-3 text-xs">
+            <!-- Botones de Desplazamiento Horizontal Rápido -->
+            <div class="hidden sm:flex items-center space-x-1 bg-slate-200/80 p-0.5 rounded-lg border border-slate-300">
+              <button onclick="desplazarTabla('wrapper-tabla-casos', -350)" class="px-2 py-0.5 text-xs font-bold text-slate-700 hover:text-sky-700 hover:bg-white rounded transition shadow-none hover:shadow-sm" title="Deslizar a la izquierda">
+                ◀ Deslizar
+              </button>
+              <button onclick="desplazarTabla('wrapper-tabla-casos', 350)" class="px-2 py-0.5 text-xs font-bold text-slate-700 hover:text-sky-700 hover:bg-white rounded transition shadow-none hover:shadow-sm" title="Deslizar a la derecha">
+                Deslizar ▶
+              </button>
+              <button onclick="desplazarTabla('wrapper-tabla-casos', 9999)" class="px-2 py-0.5 text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white rounded transition shadow-sm" title="Ver columnas de Estado, Citas y Acciones">
+                Ver Acciones ➔
+              </button>
+            </div>
+
+            <div class="flex items-center space-x-1">
+              <span class="text-slate-400">Ver:</span>
+              <select id="paginacion-limite" class="py-1 px-2 rounded border border-slate-300 bg-white font-medium text-slate-700">
+                <option value="50" selected>50 por página</option>
+                <option value="100">100 por página</option>
+                <option value="250">250 por página</option>
+                <option value="1000">1.000 (Todos)</option>
+              </select>
+            </div>
+            <span class="text-[11px] text-slate-400 hidden sm:inline">• 50 bloques despivotados</span>
+          </div>
+        </div>
+
+        <!-- Barra de Guía y Control de Desplazamiento Horizontal Casos -->
+        <div id="guia-scroll-casos" class="bg-gradient-to-r from-sky-50 to-blue-50 px-3.5 py-2 border-b border-sky-100 flex flex-wrap items-center justify-between gap-2 text-xs text-sky-900">
+          <div class="flex items-center space-x-2">
+            <span class="text-base animate-pulse">👉</span>
+            <span class="font-bold">Columnas completas hacia la derecha:</span>
+            <span class="text-sky-700 hidden md:inline">Nutricionista / Asignación, Estado Nutricional, Citas y Acciones</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span id="scroll-indicador-casos" class="text-[11px] font-mono text-sky-700 bg-white px-2 py-0.5 rounded border border-sky-200">
+              Inicio ◀ (Desliza para ver más)
+            </span>
+            <button onclick="desplazarTabla('wrapper-tabla-casos', -350)" class="px-2 py-1 text-xs font-bold bg-white hover:bg-slate-100 text-slate-700 rounded border border-slate-300 shadow-sm transition">
+              ◀ Deslizar
+            </button>
+            <button onclick="desplazarTabla('wrapper-tabla-casos', 350)" class="px-2 py-1 text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white rounded shadow-sm transition">
+              Deslizar ▶
+            </button>
+            <button onclick="desplazarTabla('wrapper-tabla-casos', 9999)" class="px-2 py-1 text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white rounded shadow-sm transition">
+              Ver Acciones ➔
+            </button>
+          </div>
+        </div>
+
+        <!-- Barra de Desplazamiento Superior Sincronizada -->
+        <div id="top-scrollbar-casos" class="table-scrollbar-visible overflow-x-auto overflow-y-hidden border-b border-slate-200 bg-slate-100" style="height: 14px;">
+          <div id="top-scrollbar-casos-inner" style="height: 1px; min-width: 1350px;"></div>
+        </div>
+
+        <div id="wrapper-tabla-casos" class="responsive-table-wrapper table-scrollbar-visible">
+          <table id="tabla-casos-element" class="w-full text-left text-xs sm:text-sm min-w-[1350px] divide-y divide-slate-200">
+            <thead class="bg-slate-100 text-slate-700 uppercase font-bold text-[11px] border-b border-slate-200 sticky top-0 z-10">
+              <tr>
+                <th class="py-3 px-3.5 whitespace-nowrap">Documento</th>
+                <th class="py-3 px-3.5 whitespace-nowrap">Paciente</th>
+                <th class="py-3 px-3.5 text-center whitespace-nowrap">Edad</th>
+                <th class="py-3 px-3.5 whitespace-nowrap">Municipio</th>
+                <th class="py-3 px-3.5 whitespace-nowrap">EAPB</th>
+                <th class="py-3 px-3.5 whitespace-nowrap">Nutricionista / Asignado</th>
+                <th class="py-3 px-3.5 whitespace-nowrap">Estado Nutricional Actual</th>
+                <th class="py-3 px-3.5 text-center whitespace-nowrap">Ctrls</th>
+                <th class="py-3 px-3.5 whitespace-nowrap">Próxima Cita</th>
+                <th class="py-3 px-3.5 text-right whitespace-nowrap">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-casos-body">
+              <!-- Renderizado dinámico vía JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Barra Inferior de Paginación -->
+        <div id="barra-paginacion" class="p-3 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs">
+          <span id="paginacion-resumen" class="text-slate-600 font-medium">Mostrando 1 a 50 de 750 casos</span>
+          <div class="flex items-center space-x-2">
+            <button id="btn-pag-anterior" onclick="cambiarPaginaCasos(-1)" class="px-3 py-1.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-100 font-bold text-slate-700 disabled:opacity-40 disabled:cursor-not-allowed transition">
+              ◀ Anterior
+            </button>
+            <span id="paginacion-indicador" class="px-3 py-1.5 font-bold text-sky-800 bg-sky-50 rounded-lg border border-sky-200">
+              Página 1 de 15
+            </span>
+            <button id="btn-pag-siguiente" onclick="cambiarPaginaCasos(1)" class="px-3 py-1.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-100 font-bold text-slate-700 disabled:opacity-40 disabled:cursor-not-allowed transition">
+              Siguiente ▶
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- 3. PESTAÑA: EXPEDIENTE CLÍNICO -->
+    <section id="tab-expediente" class="tab-content space-y-6">
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm relative">
+        <!-- Barra Superior con Botón Volver a la Lista -->
+        <div class="mb-4 pb-3 border-b border-slate-100 flex items-center justify-between">
+          <button id="exp-btn-volver" onclick="volverDeExpediente()" class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 shadow-sm transition">
+            <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+            <span id="exp-btn-volver-texto">← Volver a la Lista</span>
+          </button>
+          <span class="text-[11px] text-slate-400 font-medium">Conserva tus filtros y página actual al regresar</span>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-4 pb-4 border-b border-slate-200">
+          <div class="min-w-0">
+            <div class="flex flex-wrap items-center gap-2">
+              <h2 id="exp-nombre" class="text-lg sm:text-xl font-black text-slate-900 break-words">Seleccione un caso</h2>
+              <span id="exp-diagnostico-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold shrink-0"></span>
+            </div>
+            <p id="exp-documento" class="text-xs text-slate-500 font-mono mt-0.5">RC / CN</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto shrink-0">
+            <button id="exp-btn-imprimir" onclick="imprimirExpedienteActual()" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white shadow-sm transition">
+              <span>🖨️ Imprimir</span>
+            </button>
+            <button id="exp-btn-nuevo-control" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm transition">
+              + Registrar Control
+            </button>
+            <button id="exp-btn-cerrar-caso" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100 transition">
+              Cerrar Caso
+            </button>
+          </div>
+        </div>
+
+        <!-- Ficha de Datos Clínicos y de Filiación Proporcional -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4 py-3 sm:py-4 text-xs">
+          <div class="min-w-0">
+            <span class="text-slate-400 block text-[11px]">Edad Actual:</span>
+            <span id="exp-edad" class="font-bold text-slate-800 text-xs sm:text-sm block truncate">-</span>
+          </div>
+          <div class="min-w-0">
+            <span class="text-slate-400 block text-[11px]">Municipio:</span>
+            <span id="exp-municipio" class="font-semibold text-slate-800 text-xs sm:text-sm block truncate">-</span>
+          </div>
+          <div class="min-w-0">
+            <span class="text-slate-400 block text-[11px]">EAPB (EPS):</span>
+            <span id="exp-eapb" class="font-semibold text-slate-800 text-xs sm:text-sm block truncate">-</span>
+          </div>
+          <div class="min-w-0">
+            <span class="text-slate-400 block text-[11px]">Sede IPSI:</span>
+            <span id="exp-sede" class="font-semibold text-slate-800 text-xs sm:text-sm block truncate">-</span>
+          </div>
+          <div class="min-w-0">
+            <span class="text-slate-400 block text-[11px]">Cuidador / Madre:</span>
+            <span id="exp-cuidador" class="font-medium text-slate-800 text-xs block truncate">-</span>
+          </div>
+          <div class="min-w-0">
+            <span class="text-slate-400 block text-[11px]">Teléfono Contacto:</span>
+            <span id="exp-telefono" class="font-mono text-slate-800 text-xs block truncate">-</span>
+          </div>
+          <div class="min-w-0">
+            <span class="text-slate-400 block text-[11px]">Estado del Caso:</span>
+            <span id="exp-estado" class="font-bold text-sky-700 text-xs block truncate">-</span>
+          </div>
+          <div class="min-w-0">
+            <span class="text-slate-400 block text-[11px]">Historial en Sistema:</span>
+            <span id="exp-episodios-badge" class="font-semibold text-slate-700 text-xs block truncate">-</span>
+          </div>
+        </div>
+
+        <!-- =====================================================================
+             PANEL DE TRAZABILIDAD Y EVOLUCIÓN CLÍNICA INTEGRAL (CON CONMUTADOR)
+             ===================================================================== -->
+        <div class="mt-5 pt-4 border-t border-slate-200 space-y-4">
+          <!-- Cabecera y Conmutador de 3 Vistas -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <div class="flex items-center space-x-2">
+                <h3 class="text-sm sm:text-base font-bold text-slate-900">Ruta de Atención y Trazabilidad Integral</h3>
+                <span id="exp-total-hitos-contador" class="text-xs font-bold text-sky-800 bg-sky-100 px-2.5 py-0.5 rounded-full border border-sky-200">0 hitos</span>
+              </div>
+              <p class="text-xs text-slate-500 mt-0.5">Captación comunitaria ➔ Búsqueda GBAI ➔ 1ra Atención IPSI ➔ Evolución de Controles</p>
+            </div>
+
+            <!-- CONMUTADOR SEGMENTADO DE VISTAS (3 MODOS) -->
+            <div class="flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs self-start sm:self-auto shadow-inner">
+              <button id="btn-vista-kardex" onclick="cambiarVistaTrazabilidad('kardex')" class="vista-trazabilidad-btn px-3 py-1.5 rounded-lg transition flex items-center space-x-1.5 bg-white text-sky-700 shadow-sm border border-slate-200 font-bold" title="Ver tabla clínica vertical de evolución">
+                <span>📋</span>
+                <span>Tabla de Evolución</span>
+              </button>
+              <button id="btn-vista-timeline" onclick="cambiarVistaTrazabilidad('timeline')" class="vista-trazabilidad-btn px-3 py-1.5 rounded-lg transition flex items-center space-x-1.5 text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 font-medium" title="Ver línea de tiempo vertical cronológica">
+                <span>🕒</span>
+                <span>Línea de Tiempo</span>
+              </button>
+              <button id="btn-vista-tarjetas" onclick="cambiarVistaTrazabilidad('tarjetas')" class="vista-trazabilidad-btn px-3 py-1.5 rounded-lg transition flex items-center space-x-1.5 text-slate-600 hover:text-slate-900 hover:bg-slate-200/60 font-medium" title="Ver tarjetas visuales paginadas">
+                <span>🗂️</span>
+                <span>Tarjetas (Paginadas)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 1. VISTA: TABLA DE EVOLUCIÓN CLÍNICA (KARDEX MÉDICO) -->
+          <div id="vista-trazabilidad-kardex" class="space-y-3">
+            <!-- Barra de Resumen Macro de Fases -->
+            <div id="exp-resumen-macro-fases" class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <!-- Se puebla dinámicamente con JS -->
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm custom-scrollbar bg-white">
+              <table class="w-full text-xs text-left min-w-[950px] divide-y divide-slate-200">
+                <thead class="bg-slate-100 text-slate-700 font-bold text-[11px] uppercase tracking-wider">
+                  <tr>
+                    <th class="py-3 px-3.5 whitespace-nowrap">Hito / Control</th>
+                    <th class="py-3 px-3.5 whitespace-nowrap">Fecha</th>
+                    <th class="py-3 px-3.5 text-center whitespace-nowrap">Peso & Δ</th>
+                    <th class="py-3 px-3.5 text-center whitespace-nowrap">Talla</th>
+                    <th class="py-3 px-3.5 text-center whitespace-nowrap">PB</th>
+                    <th class="py-3 px-3.5 text-center whitespace-nowrap">Z-Score (P/T)</th>
+                    <th class="py-3 px-3.5 text-center whitespace-nowrap">Ganancia (g/kg/d)</th>
+                    <th class="py-3 px-3.5 whitespace-nowrap">Estado Nutricional</th>
+                    <th class="py-3 px-3.5 text-center whitespace-nowrap">FTLC</th>
+                    <th class="py-3 px-3.5 text-right whitespace-nowrap">Ficha</th>
+                  </tr>
+                </thead>
+                <tbody id="exp-tabla-kardex-body" class="divide-y divide-slate-100 text-slate-800">
+                  <!-- Se puebla dinámicamente con JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 2. VISTA: LÍNEA DE TIEMPO VERTICAL COLAPSABLE -->
+          <div id="vista-trazabilidad-timeline" class="hidden bg-slate-50/60 p-4 sm:p-6 rounded-2xl border border-slate-200">
+            <div id="exp-timeline-vertical" class="relative pl-6 space-y-4 before:absolute before:left-2.5 before:top-3 before:bottom-3 before:w-0.5 before:bg-sky-200">
+              <!-- Se puebla dinámicamente con JS -->
+            </div>
+          </div>
+
+          <!-- 3. VISTA: TARJETAS VISUALES PAGINADAS (SIN SCROLLBAR INFINITO) -->
+          <div id="vista-trazabilidad-tarjetas" class="hidden space-y-3">
+            <!-- Barra de navegación del carrusel -->
+            <div class="flex items-center justify-between bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-xs">
+              <span id="exp-tarjetas-paginacion-info" class="font-medium text-slate-600">Mostrando 1 a 4 de 12 hitos</span>
+              <div class="flex items-center space-x-1.5">
+                <button onclick="cambiarPaginaTarjetas(-1)" id="btn-tarjetas-ant" class="px-2.5 py-1 text-xs font-bold bg-white hover:bg-slate-100 text-slate-700 rounded-lg border border-slate-300 shadow-sm transition disabled:opacity-40 disabled:cursor-not-allowed">
+                  ◀ Anterior
+                </button>
+                <span id="exp-tarjetas-indicador" class="px-2.5 py-1 font-mono font-bold text-sky-800 bg-sky-50 rounded-lg border border-sky-200">
+                  1 / 3
+                </span>
+                <button onclick="cambiarPaginaTarjetas(1)" id="btn-tarjetas-sig" class="px-2.5 py-1 text-xs font-bold bg-white hover:bg-slate-100 text-slate-700 rounded-lg border border-slate-300 shadow-sm transition disabled:opacity-40 disabled:cursor-not-allowed">
+                  Siguiente ▶
+                </button>
+                <button onclick="irAUltimaPaginaTarjetas()" class="px-2.5 py-1 text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white rounded-lg shadow-sm transition" title="Ir a los controles más recientes">
+                  Últimos ⏭
+                </button>
+              </div>
+            </div>
+
+            <!-- Contenedor de Tarjetas en Grid Responsivo (4 columnas máx, sin scroll infinito) -->
+            <div id="exp-tarjetas-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+              <!-- Se inyecta dinámicamente con JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Gráfica de Curva Antropométrica (Evolución de Puntaje Z y Peso) -->
+        <div class="mt-6 pt-6 border-t border-slate-100">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+            <div>
+              <h3 class="text-sm font-bold text-slate-800">Curva de Evolución Antropométrica</h3>
+              <p class="text-xs text-slate-500">Trayectoria de Puntaje Z (P/T) y Peso Corporal a lo largo de todas las citas</p>
+            </div>
+            <span class="text-xs text-slate-400 font-medium">Línea continua: Z-Score • Línea discontinua: Peso (kg)</span>
+          </div>
+          <div class="h-64 sm:h-72 relative bg-slate-50 p-3 rounded-xl border border-slate-200">
+            <canvas id="chart-curva-evolucion"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- 4. PESTAÑA: NOTIFICAR NUEVO CASO (FT-003) -->
+    <section id="tab-nuevo-caso" class="tab-content">
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm max-w-4xl mx-auto">
+        <div class="border-b border-slate-200 pb-4 mb-6">
+          <h2 class="text-lg font-bold text-slate-900">Registro de Notificación de Paciente (FT-003)</h2>
+          <p class="text-xs text-slate-500">Ingreso a la ruta integral de atención de desnutrición aguda o riesgo de DNT (0 a 59 meses)</p>
+        </div>
+
+        <form id="form-nuevo-caso" class="space-y-6">
+          <!-- Bloque A: Identificación del Menor -->
+          <div>
+            <h3 class="text-xs font-bold text-sky-800 uppercase tracking-wider mb-3">A. Identificación del Menor</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Tipo Documento *</label>
+                <select id="nuevo-tipo-doc" class="w-full text-xs p-2 rounded border border-slate-300" required>
+                  <option value="RC">RC - Registro Civil</option>
+                  <option value="CN">CN - Certificado Nacido Vivo</option>
+                  <option value="MS">MS - Menor Sin Identificación</option>
+                  <option value="PT">PT - Permiso Temporal</option>
+                  <option value="PPT">PPT - Permiso Protección Temporal</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Número de Documento *</label>
+                <input type="text" id="nuevo-doc-paciente" class="w-full text-xs p-2 rounded border border-slate-300 font-mono" required placeholder="Ej: 1124567890">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Fecha de Nacimiento *</label>
+                <input type="date" id="nuevo-fecha-nac" class="w-full text-xs p-2 rounded border border-slate-300" required>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Primer Nombre *</label>
+                <input type="text" id="nuevo-primer-nombre" class="w-full text-xs p-2 rounded border border-slate-300" required>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Segundo Nombre</label>
+                <input type="text" id="nuevo-segundo-nombre" class="w-full text-xs p-2 rounded border border-slate-300">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Primer Apellido *</label>
+                <input type="text" id="nuevo-primer-apellido" class="w-full text-xs p-2 rounded border border-slate-300" required>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Segundo Apellido</label>
+                <input type="text" id="nuevo-segundo-apellido" class="w-full text-xs p-2 rounded border border-slate-300">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Sexo *</label>
+                <select id="nuevo-sexo" class="w-full text-xs p-2 rounded border border-slate-300" required>
+                  <option value="M">Masculino (M)</option>
+                  <option value="F">Femenino (F)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Municipio *</label>
+                <select id="nuevo-municipio" class="w-full text-xs p-2 rounded border border-slate-300" required></select>
+              </div>
+              <div class="sm:col-span-3">
+                <label class="block text-xs font-medium text-slate-700 mb-1">Georreferenciación / Comunidad / Corregimiento</label>
+                <input type="text" id="nuevo-georref" class="w-full text-xs p-2 rounded border border-slate-300" placeholder="Ej: Comunidad Wayuu Wimpeshi, Casa #4">
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloque B: Datos del Cuidador -->
+          <div class="pt-4 border-t border-slate-100">
+            <h3 class="text-xs font-bold text-sky-800 uppercase tracking-wider mb-3">B. Datos del Cuidador / Madre</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Nombre Completo del Cuidador *</label>
+                <input type="text" id="nuevo-cuidador-nombre" class="w-full text-xs p-2 rounded border border-slate-300" required>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Documento del Cuidador</label>
+                <input type="text" id="nuevo-cuidador-doc" class="w-full text-xs p-2 rounded border border-slate-300 font-mono">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Teléfono de Contacto</label>
+                <input type="text" id="nuevo-cuidador-tel" class="w-full text-xs p-2 rounded border border-slate-300 font-mono" placeholder="Ej: 3201234567">
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloque C: Notificación y Captación -->
+          <div class="pt-4 border-t border-slate-100">
+            <h3 class="text-xs font-bold text-sky-800 uppercase tracking-wider mb-3">C. Datos de la Notificación</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Fuente de Notificación *</label>
+                <select id="nuevo-fuente-notif" class="w-full text-xs p-2 rounded border border-slate-300" required>
+                  <option value="Evento 113: DNT">Evento 113: DNT</option>
+                  <option value="Evento 114: Riesgo DNT" selected>Evento 114: Riesgo DNT</option>
+                  <option value="Otro Dx">Otro Diagnóstico</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Fecha de Notificación *</label>
+                <input type="date" id="nuevo-fecha-notif" class="w-full text-xs p-2 rounded border border-slate-300" required>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Medio de Notificación</label>
+                <select id="nuevo-medio-notif" class="w-full text-xs p-2 rounded border border-slate-300">
+                  <option value="Correo">Correo Electrónico</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="Oficio Ext">Oficio Externo</option>
+                  <option value="Interno IPSI">Interno IPSI</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Cooperante / Notificador</label>
+                <input type="text" id="nuevo-cooperante" class="w-full text-xs p-2 rounded border border-slate-300" placeholder="Ej: UNICEF, PMA, ICBF">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">EAPB (EPS)</label>
+                <select id="nuevo-eapb" class="w-full text-xs p-2 rounded border border-slate-300"></select>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Sede IPSI Primaria</label>
+                <select id="nuevo-sede" class="w-full text-xs p-2 rounded border border-slate-300"></select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloque D: Primera Atención en IPSI -->
+          <div class="pt-4 border-t border-slate-100">
+            <h3 class="text-xs font-bold text-sky-800 uppercase tracking-wider mb-3">D. Primera Atención Clínica en IPSI</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Fecha 1ra Atención</label>
+                <input type="date" id="nuevo-fecha-atenc" class="w-full text-xs p-2 rounded border border-slate-300">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Peso (kg)</label>
+                <input type="number" step="0.01" id="nuevo-peso-atenc" class="w-full text-xs p-2 rounded border border-slate-300">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Talla (cm)</label>
+                <input type="number" step="0.1" id="nuevo-talla-atenc" class="w-full text-xs p-2 rounded border border-slate-300">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Perímetro Braquial (cm)</label>
+                <input type="number" step="0.1" id="nuevo-pb-atenc" class="w-full text-xs p-2 rounded border border-slate-300">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Puntaje Z (P/T)</label>
+                <input type="number" step="0.01" id="nuevo-zscore-atenc" class="w-full text-xs p-2 rounded border border-slate-300" placeholder="-2.45">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Prueba de Apetito</label>
+                <select id="nuevo-prueba-apetito" class="w-full text-xs p-2 rounded border border-slate-300">
+                  <option value="Positiva">Positiva</option>
+                  <option value="Negativa">Negativa</option>
+                  <option value="No Aplica">No Aplica</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Sobres FTLC Entregados</label>
+                <input type="number" id="nuevo-sobres-ftlc" class="w-full text-xs p-2 rounded border border-slate-300" value="0">
+              </div>
+              <div>
+                <label class="block text-xs font-medium text-slate-700 mb-1">Tratamiento Inicial</label>
+                <input type="text" id="nuevo-tratamiento" class="w-full text-xs p-2 rounded border border-slate-300" placeholder="FTLC ambulatorio">
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-200 flex justify-end space-x-3">
+            <button type="reset" class="px-4 py-2 rounded-lg text-xs font-semibold border border-slate-300 text-slate-700 hover:bg-slate-50">
+              Limpiar Formulario
+            </button>
+            <button type="submit" class="px-5 py-2 rounded-lg text-xs font-bold bg-sky-700 hover:bg-sky-600 text-white shadow-md transition">
+              Guardar Notificación de Caso
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    
+
+    <!-- 5. PESTAÑA: INDICADORES MENSUALES -->
+    <section id="tab-indicadores" class="tab-content space-y-6">
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-6">
+          <div>
+            <h2 class="text-base font-bold text-slate-900">Indicadores Mensuales por Municipio</h2>
+            <p class="text-xs text-slate-500">Matriz consolidada para reportes epidemiológicos y entes de control (FT-004)</p>
+          </div>
+          <div class="flex items-center space-x-3">
+            <!-- Selector dinámico de año -->
+            <div class="flex items-center space-x-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200">
+              <label for="indicadores-filtro-anio" class="text-xs font-bold text-slate-600">Año de Vigilancia:</label>
+              <select id="indicadores-filtro-anio" onchange="cambiarAnioIndicadores(this.value)" class="py-1 px-2.5 rounded border border-slate-300 bg-white font-bold text-sky-800 text-xs shadow-sm">
+                <!-- Se pobla automáticamente con los años detectados en la BD (2024, 2025, 2026, 2027...) -->
+              </select>
+            </div>
+            <button onclick="exportarExcel()" class="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm transition">
+              Descargar en Excel
+            </button>
+          </div>
+        </div>
+
+        <div id="contenedor-indicadores-matriz">
+          <!-- Renderizado dinámico vía JS -->
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- 6. PESTAÑA: CARGA MASIVA Y SINCRONIZACIÓN EXCEL EPS -->
+    <section id="tab-importacion" class="tab-content space-y-6">
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <div class="border-b border-slate-200 pb-4 mb-6">
+          <div class="flex items-center space-x-2">
+            <span class="p-2 bg-sky-100 text-sky-700 rounded-lg text-lg">📥</span>
+            <div>
+              <h2 class="text-lg font-bold text-slate-900">Carga Masiva y Sincronización Incremental de Reportes EPS</h2>
+              <p class="text-xs text-slate-500">Módulo automatizado para procesar los consolidados periódicos remitidos por las trabajadoras de las aseguradoras (EPS Familiar, Nueva EPS, Dusakawi, etc.)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjetas Informativas de Lógica Operativa -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div class="p-4 rounded-xl border border-emerald-200 bg-emerald-50/60">
+            <div class="flex items-center space-x-2 text-emerald-800 font-bold text-xs uppercase mb-1">
+              <span>🟢</span>
+              <span>1. Pacientes Nuevos</span>
+            </div>
+            <p class="text-xs text-emerald-950">
+              Si el menor <strong>no existe en el sistema</strong>, se crea automáticamente su ficha con identificación, cuidador, afiliación, captación inicial y sus controles.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl border border-sky-200 bg-sky-50/60">
+            <div class="flex items-center space-x-2 text-sky-800 font-bold text-xs uppercase mb-1">
+              <span>🔵</span>
+              <span>2. Pacientes Existentes</span>
+            </div>
+            <p class="text-xs text-sky-950">
+              Si el paciente <strong>ya está registrado</strong>, se actualizan sus datos demográficos (teléfono, cuidador, dirección) sin duplicar registros.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl border border-purple-200 bg-purple-50/60">
+            <div class="flex items-center space-x-2 text-purple-800 font-bold text-xs uppercase mb-1">
+              <span>🩺</span>
+              <span>3. Nuevos Controles Clínicos</span>
+            </div>
+            <p class="text-xs text-purple-950">
+              Se detectan y anexan cronológicamente <strong>todos los nuevos controles</strong> reportados en el Excel, recalculando el Z-Score y la próxima cita médica.
+            </p>
+          </div>
+        </div>
+
+        <!-- Zona de Arrastrar y Soltar (Drag and Drop Zone) -->
+        <div id="dropzone-excel-eps" class="border-2 border-dashed border-sky-300 hover:border-sky-500 bg-sky-50/40 hover:bg-sky-50/80 rounded-2xl p-8 text-center transition cursor-pointer flex flex-col items-center justify-center">
+          <input type="file" id="input-file-eps" accept=".xlsx, .xls" class="hidden">
+          <div class="p-4 bg-white rounded-full shadow-sm mb-3">
+            <svg class="w-10 h-10 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+            </svg>
+          </div>
+          <h3 class="text-sm font-bold text-slate-800 mb-1">Arrastra y suelta aquí el archivo Excel (.xlsx / .xls) de la EPS</h3>
+          <p class="text-xs text-slate-500 mb-4">Compatible con plantillas oficiales PM-RIA-FT-003 / FT-004 y reportes de seguimiento de aseguradoras</p>
+          <button type="button" onclick="document.getElementById('input-file-eps').click()" class="px-4 py-2 bg-sky-600 hover:bg-sky-500 text-white rounded-lg text-xs font-bold shadow transition flex items-center space-x-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+            <span>Seleccionar Archivo desde el Equipo</span>
+          </button>
+        </div>
+
+        <!-- Archivo Seleccionado y Botón de Procesamiento -->
+        <div id="contenedor-archivo-seleccionado" class="hidden mt-4 p-4 rounded-xl border border-slate-200 bg-slate-50 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center space-x-3">
+            <span class="text-2xl p-2 bg-white border border-slate-200 rounded-lg">📊</span>
+            <div>
+              <p id="archivo-nombre-display" class="text-xs font-bold text-slate-800">nombre_archivo.xlsx</p>
+              <p id="archivo-tamano-display" class="text-[11px] text-slate-500">0 KB</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button type="button" onclick="cancelarArchivoSeleccionado()" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-200 transition">
+              Quitar
+            </button>
+            <button id="btn-procesar-excel-eps" type="button" onclick="subirYProcesarExcelEPS()" class="px-4 py-2 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow transition flex items-center space-x-1.5">
+              <span>⚡ Procesar y Sincronizar en Base de Datos</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Estado de Procesamiento (Spinner) -->
+        <div id="contenedor-procesando-excel" class="hidden mt-6 p-8 text-center bg-slate-50 rounded-xl border border-slate-200">
+          <div class="inline-block animate-spin rounded-full h-10 w-10 border-4 border-sky-600 border-t-transparent mb-3"></div>
+          <h4 class="text-sm font-bold text-slate-800">Procesando y Sincronizando Reporte EPS...</h4>
+          <p class="text-xs text-slate-500 mt-1">Leyendo hojas de cálculo, deduplicando pacientes, actualizando historiales e insertando nuevos controles en PostgreSQL.</p>
+        </div>
+
+        <!-- Resultados de la Sincronización -->
+        <div id="contenedor-resultados-importacion" class="hidden mt-6 space-y-4">
+          <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+              <span class="text-2xl">🎉</span>
+              <div>
+                <h4 class="text-sm font-bold text-emerald-900">¡Sincronización Completada con Éxito!</h4>
+                <p id="res-resumen-texto" class="text-xs text-emerald-700">Se han procesado los datos de la EPS y actualizado los expedientes clínicos.</p>
+              </div>
+            </div>
+            <button onclick="verCasosActualizados()" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-lg shadow transition">
+              Ver Casos en Seguimiento
+            </button>
+          </div>
+
+          <!-- Métricas de Impacto -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+            <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
+              <span class="text-xs text-slate-500 block uppercase font-bold">Pacientes Nuevos</span>
+              <span id="res-pacientes-creados" class="text-2xl font-black text-emerald-600">0</span>
+              <span class="text-[10px] text-slate-400 block mt-1">Registrados en el sistema</span>
+            </div>
+
+            <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
+              <span class="text-xs text-slate-500 block uppercase font-bold">Pacientes Actualizados</span>
+              <span id="res-pacientes-actualizados" class="text-2xl font-black text-sky-600">0</span>
+              <span class="text-[10px] text-slate-400 block mt-1">Datos de contacto y filiación</span>
+            </div>
+
+            <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
+              <span class="text-xs text-slate-500 block uppercase font-bold">Nuevos Controles</span>
+              <span id="res-controles-nuevos" class="text-2xl font-black text-purple-600">0</span>
+              <span class="text-[10px] text-slate-400 block mt-1">Anexados al historial clínico</span>
+            </div>
+
+            <div class="p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
+              <span class="text-xs text-slate-500 block uppercase font-bold">Controles Actualizados</span>
+              <span id="res-controles-actualizados" class="text-2xl font-black text-slate-700">0</span>
+              <span class="text-[10px] text-slate-400 block mt-1">Mediciones ajustadas</span>
+            </div>
+          </div>
+
+          <!-- Ficha de Detalles de Auditoría -->
+          <div class="p-4 bg-white rounded-xl border border-slate-200 text-xs space-y-1">
+            <div class="flex justify-between py-1 border-b border-slate-100">
+              <span class="text-slate-500">Archivo Procesado:</span>
+              <span id="res-archivo-nombre" class="font-bold text-slate-800">-</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-slate-100">
+              <span class="text-slate-500">Hojas de Cálculo Analizadas:</span>
+              <span id="res-hojas-procesadas" class="font-semibold text-slate-700">-</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-slate-100">
+              <span class="text-slate-500">Tiempo Total de Ejecución:</span>
+              <span id="res-tiempo-proceso" class="font-semibold text-slate-700">-</span>
+            </div>
+            <div class="flex justify-between py-1">
+              <span class="text-slate-500">Total Movimientos en Base de Datos:</span>
+              <span id="res-total-movimientos" class="font-bold text-emerald-700">-</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+  <!-- 7. PESTAÑA: CENTRO OFICIAL DE REPORTES Y GENERACIÓN DE ARCHIVOS -->
+    <section id="tab-reportes-oficiales" class="tab-content space-y-6">
+      <!-- Encabezado del Módulo -->
+      <div class="bg-gradient-to-r from-sky-900 via-sky-800 to-indigo-900 rounded-xl shadow-lg p-6 text-white border border-sky-700/50">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <div class="flex items-center space-x-2">
+              <span class="p-2 bg-sky-500/20 rounded-lg text-2xl border border-sky-400/30">📑</span>
+              <h2 class="text-xl sm:text-2xl font-bold tracking-tight">Centro Oficial de Reportes y Generación de Archivos</h2>
+            </div>
+            <p class="text-sm text-sky-200">
+              Emisión automatizada y fiel de matrices institucionales, reportes epidemiológicos SIVIGILA, comités de la Sentencia T-302 y planillas de campo para los 10.656 pacientes.
+            </p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
+              Base Unificada • 10.656 Pacientes
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid de Módulos de Generación -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <!-- TARJETA 1: MATRIZ MAESTRA INSTITUCIONAL FT-003 / FT-004 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 hover:border-emerald-500/50 transition-all p-6 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-start justify-between">
+              <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl font-black shadow-inner">
+                  📊
+                </div>
+                <div>
+                  <div class="flex items-center space-x-2">
+                    <h3 class="text-base font-bold text-slate-800">Matriz Maestra Institucional FT-003 / 004</h3>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">Oficial IPSI</span>
+                  </div>
+                  <p class="text-xs text-slate-500">Formato original con pestañas Notificados, Seguimiento, colores y formato condicional</p>
+                </div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+              Genera el libro Excel idéntico al entregable institucional exigido por las EPS y auditoría médica, con fórmulas de velocidad de crecimiento, Z-scores y semaforización clínica completa.
+            </p>
+
+            <!-- Filtros de la Matriz -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 pt-3 border-t border-slate-100">
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-700 mb-1">Aseguradora (EAPB):</label>
+                <select id="rep-matriz-eapb" class="w-full text-xs rounded-lg border-slate-300 focus:ring-emerald-500 focus:border-emerald-500 bg-slate-50 py-1.5 px-2.5">
+                  <option value="TODAS">Todas las Aseguradoras (EPS)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-700 mb-1">Municipio:</label>
+                <select id="rep-matriz-municipio" class="w-full text-xs rounded-lg border-slate-300 focus:ring-emerald-500 focus:border-emerald-500 bg-slate-50 py-1.5 px-2.5">
+                  <option value="TODOS">Todos los Municipios</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button onclick="generarReporteMatrizMaestra()" class="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow-sm transition space-x-2 group">
+              <svg class="w-4 h-4 text-emerald-100 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+              <span>Descargar Matriz Maestra Oficial (.xlsx)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TARJETA 2: REPORTE EPIDEMIOLÓGICO SIVIGILA (INS) -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 hover:border-blue-500/50 transition-all p-6 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-start justify-between">
+              <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-2xl font-black shadow-inner">
+                  🏛️
+                </div>
+                <div>
+                  <div class="flex items-center space-x-2">
+                    <h3 class="text-base font-bold text-slate-800">Reporte Epidemiológico SIVIGILA (INS)</h3>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200">Eventos 113 / 114</span>
+                  </div>
+                  <p class="text-xs text-slate-500">Corte oficial para Instituto Nacional de Salud y Secretaría de Salud</p>
+                </div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+              Exporta la estructura oficial SIVIGILA con códigos de evento, variables canónicas (`cod_eve`, `semana`, `fec_not`, `pri_nom_`, etc.) y estado de cargue nacional en SISPRO.
+            </p>
+
+            <!-- Filtros SIVIGILA -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4 pt-3 border-t border-slate-100">
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-700 mb-1">Evento SIVIGILA:</label>
+                <select id="rep-sivigila-evento" class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500 bg-slate-50 py-1.5 px-2.5">
+                  <option value="">Ambos (113 y 114)</option>
+                  <option value="113">Evento 113 (Desnutrición Aguda)</option>
+                  <option value="114">Evento 114 (Morbilidad / EDA / IRA)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-700 mb-1">Semana Epidemiológica:</label>
+                <select id="rep-sivigila-semana" class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500 bg-slate-50 py-1.5 px-2.5">
+                  <option value="">Todas las Semanas</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-700 mb-1">Año:</label>
+                <select id="rep-sivigila-anio" class="w-full text-xs rounded-lg border-slate-300 focus:ring-blue-500 focus:border-blue-500 bg-slate-50 py-1.5 px-2.5">
+                  <option value="">Todos los Años</option>
+                  <option value="2026" selected>2026 (Año Actual)</option>
+                  <option value="2025">2025</option>
+                  <option value="2024">2024</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button onclick="generarReporteSivigila()" class="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-sm transition space-x-2 group">
+              <svg class="w-4 h-4 text-blue-100 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              <span>Generar Reporte SIVIGILA (.xlsx)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TARJETA 3: DOSSIER COMITÉS SENTENCIA T-302 / CORTE CONSTITUCIONAL -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 hover:border-purple-500/50 transition-all p-6 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-start justify-between">
+              <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-2xl font-black shadow-inner">
+                  ⚖️
+                </div>
+                <div>
+                  <div class="flex items-center space-x-2">
+                    <h3 class="text-base font-bold text-slate-800">Dossier Sentencia T-302 / Comités</h3>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 text-purple-800 border border-purple-200">Tutela T-302</span>
+                  </div>
+                  <p class="text-xs text-slate-500">Mesa Técnica de Emergencia Nutricional ante Tribunal, Supersalud e ICBF</p>
+                </div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+              Consolida nominalmente los avances nutricionales, comunidades Wayuu, autoridades tradicionales, entrega de fórmula FTLC y estado de supervivencia de los menores priorizados por la Corte Constitucional.
+            </p>
+
+            <!-- Filtros T-302 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 pt-3 border-t border-slate-100">
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-700 mb-1">Territorio Priorizado T-302:</label>
+                <select id="rep-t302-municipio" class="w-full text-xs rounded-lg border-slate-300 focus:ring-purple-500 focus:border-purple-500 bg-slate-50 py-1.5 px-2.5">
+                  <option value="TODOS">Todos los 4 Municipios T-302</option>
+                  <option value="RIOHACHA">Riohacha</option>
+                  <option value="MANAURE">Manaure</option>
+                  <option value="MAICAO">Maicao</option>
+                  <option value="URIBIA">Uribia</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-700 mb-1">Aseguradora (EAPB):</label>
+                <select id="rep-t302-eapb" class="w-full text-xs rounded-lg border-slate-300 focus:ring-purple-500 focus:border-purple-500 bg-slate-50 py-1.5 px-2.5">
+                  <option value="TODAS">Todas las Aseguradoras (EPS)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button onclick="generarReporteT302()" class="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-xs font-bold text-white bg-purple-700 hover:bg-purple-600 shadow-sm transition space-x-2 group">
+              <svg class="w-4 h-4 text-purple-200 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              <span>Descargar Dossier Sentencia T-302 (.xlsx)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TARJETA 4: PLANILLA DE BÚSQUEDA ACTIVA EXTRAMURAL (GBAI - RESCATE) -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 hover:border-amber-500/50 transition-all p-6 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-start justify-between">
+              <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl font-black shadow-inner">
+                  🚑
+                </div>
+                <div>
+                  <div class="flex items-center space-x-2">
+                    <h3 class="text-base font-bold text-slate-800">Planilla de Búsqueda Activa (GBAI)</h3>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-200">Rescate Extramural</span>
+                  </div>
+                  <p class="text-xs text-slate-500">Planilla de campo para brigadas móviles en rancherías Wayuu</p>
+                </div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+              Genera la hoja de ruta física o digital para que los promotores y enfermeras salgan a buscar a los menores con citas vencidas, riesgo de abandono o sin seguimiento, con espacios en blanco para anotar la visita domiciliaria.
+            </p>
+
+            <!-- Filtros GBAI -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 pt-3 border-t border-slate-100">
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-700 mb-1">Criterio de Inasistencia:</label>
+                <select id="rep-gbai-dias" class="w-full text-xs rounded-lg border-slate-300 focus:ring-amber-500 focus:border-amber-500 bg-slate-50 py-1.5 px-2.5">
+                  <option value="15">Cita vencida ≥ 15 días (Prioridad Alta)</option>
+                  <option value="30">Cita vencida ≥ 30 días (Prioridad Crítica)</option>
+                  <option value="7">Cita vencida ≥ 7 días (Alerta Temprana)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-[11px] font-semibold text-slate-700 mb-1">Municipio de la Brigada:</label>
+                <select id="rep-gbai-municipio" class="w-full text-xs rounded-lg border-slate-300 focus:ring-amber-500 focus:border-amber-500 bg-slate-50 py-1.5 px-2.5">
+                  <option value="TODOS">Todos los Municipios</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button onclick="generarReporteBusquedaActiva()" class="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-xs font-bold text-white bg-amber-600 hover:bg-amber-500 shadow-sm transition space-x-2 group">
+              <svg class="w-4 h-4 text-amber-100 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <span>Descargar Planilla de Campo GBAI (.xlsx)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TARJETA 5: COPIA DE SEGURIDAD Y RESPALDO BD (POSTGRESQL) -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 hover:border-slate-500/50 transition-all p-6 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-start justify-between">
+              <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center text-2xl font-black shadow-inner">
+                  💾
+                </div>
+                <div>
+                  <div class="flex items-center space-x-2">
+                    <h3 class="text-base font-bold text-slate-800">Copia de Seguridad Institucional (Backup BD)</h3>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-200 text-slate-800 border border-slate-300">1 Clic</span>
+                  </div>
+                  <p class="text-xs text-slate-500">Respaldo criptográfico completo de la base de datos PostgreSQL</p>
+                </div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+              Descarga un archivo comprimido `.sql.gz` con todas las tablas relacionales, catálogos, cuidadores y los 10.656 expedientes de pacientes. Permite restaurar o migrar el sistema a cualquier otro servidor de forma inmediata.
+            </p>
+            <div class="mt-3 p-3 bg-slate-50 rounded-lg border border-slate-200 text-[11px] text-slate-600 space-y-1">
+              <div class="flex justify-between"><span>Base de Datos:</span> <strong class="text-slate-800 font-mono">ipsi_nutricion</strong></div>
+              <div class="flex justify-between"><span>Formato de Descarga:</span> <strong class="text-slate-800 font-mono">.sql.gz (Compresión Gzip)</strong></div>
+              <div class="flex justify-between"><span>Contenido:</span> <span class="text-emerald-700 font-semibold">Esquema + Datos + Relaciones</span></div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button onclick="descargarBackupBD()" class="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-xs font-bold text-white bg-slate-800 hover:bg-slate-700 shadow-sm transition space-x-2 group">
+              <svg class="w-4 h-4 text-slate-300 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path></svg>
+              <span>Descargar Respaldo Completo BD (.sql.gz)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TARJETA 6: IMPORTACIÓN Y CARGUE MASIVO DE REPORTES EPS -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 hover:border-sky-500/50 transition-all p-6 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-start justify-between">
+              <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-2xl font-black shadow-inner">
+                  📥
+                </div>
+                <div>
+                  <div class="flex items-center space-x-2">
+                    <h3 class="text-base font-bold text-slate-800">Cargue e Integración de Archivos EPS</h3>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-sky-100 text-sky-800 border border-sky-200">Importador</span>
+                  </div>
+                  <p class="text-xs text-slate-500">Cruce automático por DNI y actualización de la base de datos</p>
+                </div>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+              Accede al asistente de importación para cargar nuevos archivos Excel provenientes de Familiar de Colombia, Nueva EPS o SISPRO. El sistema detecta columnas automáticamente y enriquece expedientes sin duplicar pacientes.
+            </p>
+            <div class="mt-3 p-3 bg-sky-50 rounded-lg border border-sky-200 text-[11px] text-sky-800 space-y-1">
+              <div class="flex justify-between"><span>Formatos Aceptados:</span> <strong class="font-mono">.xlsx, .xls, .csv</strong></div>
+              <div class="flex justify-between"><span>Regla de Cruce:</span> <span>DNI Numérico + Nombre</span></div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button onclick="activarPestana('tab-importacion')" class="w-full inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-xs font-bold text-white bg-sky-600 hover:bg-sky-500 shadow-sm transition space-x-2 group">
+              <svg class="w-4 h-4 text-sky-100 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+              <span>Abrir Asistente de Importación →</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL: REGISTRAR NUEVO CONTROL DE SEGUIMIENTO CLÍNICO -->
+  <div id="modal-nuevo-control" class="hidden fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl max-w-lg w-full p-6 space-y-4">
+      <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+        <div>
+          <h3 class="text-base font-bold text-slate-900">Registrar Control de Seguimiento</h3>
+          <p id="modal-control-nombre" class="text-xs text-sky-700 font-semibold mt-0.5">Paciente</p>
+        </div>
+        <button onclick="cerrarModalNuevoControl()" class="text-slate-400 hover:text-slate-600">✕</button>
+      </div>
+
+      <form id="form-nuevo-control" class="space-y-3">
+        <input type="hidden" id="modal-control-caso-id">
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Fecha del Control *</label>
+            <input type="date" id="control-fecha" class="w-full text-xs p-2 rounded border border-slate-300" required>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Peso (kg) *</label>
+            <input type="number" step="0.01" id="control-peso" class="w-full text-xs p-2 rounded border border-slate-300" required placeholder="Ej: 8.45">
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Talla (cm) *</label>
+            <input type="number" step="0.1" id="control-talla" class="w-full text-xs p-2 rounded border border-slate-300" required placeholder="Ej: 74.5">
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Perímetro Braquial (cm)</label>
+            <input type="number" step="0.1" id="control-pb" class="w-full text-xs p-2 rounded border border-slate-300" placeholder="Ej: 12.5">
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Puntaje Z (P/T) *</label>
+            <input type="number" step="0.01" id="control-zscore" class="w-full text-xs p-2 rounded border border-slate-300 font-bold text-sky-700" required placeholder="Ej: -1.85">
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Sobres FTLC Entregados</label>
+            <input type="number" id="control-sobres" class="w-full text-xs p-2 rounded border border-slate-300" value="0">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-medium text-slate-700 mb-1">Tratamiento Indicado</label>
+          <input type="text" id="control-tratamiento" class="w-full text-xs p-2 rounded border border-slate-300" placeholder="Continuación FTLC / Manejo ambulatorio">
+        </div>
+
+        <div>
+          <label class="block text-xs font-medium text-slate-700 mb-1">Novedad Especial</label>
+          <select id="control-novedad" class="w-full text-xs p-2 rounded border border-slate-300">
+            <!-- Poblar vía JS -->
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-medium text-slate-700 mb-1">Observaciones</label>
+          <textarea id="control-observaciones" rows="2" class="w-full text-xs p-2 rounded border border-slate-300" placeholder="Anotaciones de la evolución clínica..."></textarea>
+        </div>
+
+        <div class="pt-3 border-t border-slate-200 flex justify-end space-x-2">
+          <button type="button" onclick="cerrarModalNuevoControl()" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100">Cancelar</button>
+          <button type="submit" class="px-4 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow">Guardar Control</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: CERRAR CASO -->
+  <div id="modal-cerrar-caso" class="hidden fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-xl max-w-md w-full p-6 space-y-4">
+      <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+        <div>
+          <h3 class="text-base font-bold text-slate-900">Cierre / Egreso del Caso</h3>
+          <p id="modal-cierre-nombre" class="text-xs text-rose-600 font-semibold mt-0.5">Paciente</p>
+        </div>
+        <button onclick="cerrarModalCierre()" class="text-slate-400 hover:text-slate-600">✕</button>
+      </div>
+
+      <form id="form-cerrar-caso" class="space-y-3">
+        <input type="hidden" id="modal-cierre-caso-id">
+
+        <div>
+          <label class="block text-xs font-medium text-slate-700 mb-1">Motivo de Egreso *</label>
+          <select id="cierre-motivo" class="w-full text-xs p-2 rounded border border-slate-300" required>
+            <option value="Recuperación Nutricional">Recuperación Nutricional (Z >= -1.0 por 2 controles)</option>
+            <option value="Egreso por Edad (>= 60 meses)">Egreso por Edad (>= 60 meses)</option>
+            <option value="Cambio de Domicilio">Cambio de Domicilio / Traslado</option>
+            <option value="Renuencia de los Padres">Renuencia de los Padres / Cuidadores</option>
+            <option value="Fallecimiento">Fallecimiento</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-medium text-slate-700 mb-1">Fecha de Egreso *</label>
+          <input type="date" id="cierre-fecha" class="w-full text-xs p-2 rounded border border-slate-300" required>
+        </div>
+
+        <div>
+          <label class="block text-xs font-medium text-slate-700 mb-1">Observaciones Finales de Cierre</label>
+          <textarea id="cierre-observaciones" rows="2" class="w-full text-xs p-2 rounded border border-slate-300" placeholder="Detalles de la salida de la ruta..."></textarea>
+        </div>
+
+        <div class="pt-3 border-t border-slate-200 flex justify-end space-x-2">
+          <button type="button" onclick="cerrarModalCierre()" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:bg-slate-100">Cancelar</button>
+          <button type="submit" class="px-4 py-1.5 rounded-lg text-xs font-bold bg-rose-600 hover:bg-rose-500 text-white shadow">Confirmar Cierre</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: DETALLE COMPLETO DEL HITO / EVENTO CLÍNICO -->
+  <div id="modal-detalle-hito" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-6 space-y-4 my-8 border border-slate-100 max-h-[90vh] flex flex-col">
+      <!-- Encabezado -->
+      <div class="flex justify-between items-start border-b border-slate-200 pb-3 flex-shrink-0">
+        <div class="flex items-center space-x-3">
+          <span id="mdh-icono" class="text-3xl p-2 bg-slate-100 rounded-xl">📍</span>
+          <div>
+            <div class="flex items-center space-x-2">
+              <h3 id="mdh-titulo" class="text-lg font-black text-slate-900">Captación Inicial</h3>
+              <span id="mdh-clasificacion-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold"></span>
+            </div>
+            <p id="mdh-fecha" class="text-xs text-slate-500 font-mono mt-0.5">Fecha: -</p>
+          </div>
+        </div>
+        <button onclick="cerrarModalDetalleHito()" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg hover:bg-slate-100 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- Cuerpo Scrolleable con toda la ficha clínica -->
+      <div class="overflow-y-auto space-y-4 pr-1 text-xs custom-scrollbar flex-1">
+        
+        <!-- Bloque 1: Resumen del Menor y Ubicación -->
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <h4 class="font-bold text-slate-700 uppercase tracking-wider text-[11px] mb-2 flex items-center space-x-1.5">
+            <span>👶 Identificación y Contacto Familiar</span>
+          </h4>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            <div><span class="text-slate-400 block text-[10px]">Menor:</span><strong id="mdh-paciente" class="text-slate-800">-</strong></div>
+            <div><span class="text-slate-400 block text-[10px]">Documento:</span><span id="mdh-doc-paciente" class="font-mono text-slate-700">-</span></div>
+            <div><span class="text-slate-400 block text-[10px]">Municipio / Sede:</span><span id="mdh-municipio-sede" class="text-slate-700">-</span></div>
+            <div><span class="text-slate-400 block text-[10px]">Cuidador(a) / Madre:</span><span id="mdh-cuidador" class="text-slate-800">-</span></div>
+            <div><span class="text-slate-400 block text-[10px]">Teléfono de Contacto:</span><span id="mdh-telefono" class="font-mono text-sky-700 font-bold">-</span></div>
+            <div><span class="text-slate-400 block text-[10px]">Comunidad / Georreferenciación:</span><span id="mdh-georref" class="text-slate-700 truncate block" title="-">-</span></div>
+          </div>
+        </div>
+
+        <!-- Bloque 2: Métricas Antropométricas y Variación Ponderal -->
+        <div class="bg-white p-3 rounded-xl border border-sky-100 shadow-sm">
+          <h4 class="font-bold text-sky-800 uppercase tracking-wider text-[11px] mb-2 flex items-center space-x-1.5">
+            <span>⚖️ Evaluación Antropométrica (Res. 000115 / 2026)</span>
+          </h4>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+            <div class="bg-slate-50 p-2 rounded-lg border border-slate-200">
+              <span class="text-slate-400 block text-[10px] uppercase font-semibold">Peso Corporal</span>
+              <span id="mdh-peso" class="text-base font-black text-slate-800">-</span>
+              <span id="mdh-delta-peso" class="block text-[10px] text-slate-500 font-semibold mt-0.5">-</span>
+            </div>
+            <div class="bg-slate-50 p-2 rounded-lg border border-slate-200">
+              <span class="text-slate-400 block text-[10px] uppercase font-semibold">Talla / Longitud</span>
+              <span id="mdh-talla" class="text-base font-black text-slate-800">-</span>
+              <span class="block text-[10px] text-slate-400 mt-0.5">Estatura</span>
+            </div>
+            <div class="bg-slate-50 p-2 rounded-lg border border-slate-200">
+              <span class="text-slate-400 block text-[10px] uppercase font-semibold">Perímetro Braquial</span>
+              <span id="mdh-pb" class="text-base font-black text-slate-800">-</span>
+              <span class="block text-[10px] text-slate-400 mt-0.5">PB (cm)</span>
+            </div>
+            <div class="bg-sky-50 p-2 rounded-lg border border-sky-200">
+              <span class="text-sky-800 block text-[10px] uppercase font-bold">Puntaje Z (P/T)</span>
+              <span id="mdh-zscore" class="text-base font-black text-sky-700">-</span>
+              <span id="mdh-delta-z" class="block text-[10px] text-sky-600 font-bold mt-0.5">-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 3: Tratamiento, Soporte Nutricional y Clínica -->
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <h4 class="font-bold text-slate-700 uppercase tracking-wider text-[11px] mb-2 flex items-center space-x-1.5">
+            <span>🩺 Tratamiento e Indicaciones Clínicas</span>
+          </h4>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            <div><span class="text-slate-400 block text-[10px]">Tratamiento Prescrito:</span><strong id="mdh-tratamiento" class="text-slate-800">-</strong></div>
+            <div><span class="text-slate-400 block text-[10px]">Sobres FTLC Entregados:</span><span id="mdh-sobres" class="font-bold text-amber-700 text-sm">-</span></div>
+            <div><span class="text-slate-400 block text-[10px]">Prueba de Apetito:</span><span id="mdh-apetito" class="font-semibold text-slate-700">-</span></div>
+            <div><span class="text-slate-400 block text-[10px]">Escenario de Manejo:</span><span id="mdh-escenario" class="text-slate-700">-</span></div>
+            <div><span class="text-slate-400 block text-[10px]">Comorbilidades:</span><span id="mdh-comorbilidad" class="text-slate-700">-</span></div>
+            <div><span class="text-slate-400 block text-[10px]">Novedad Reportada:</span><span id="mdh-novedad" class="text-slate-700">-</span></div>
+          </div>
+        </div>
+
+        <!-- Bloque 4: Programación de Próxima Cita (Norma 000115/2026) -->
+        <div id="mdh-bloque-cita" class="p-3 rounded-xl border border-amber-200 bg-amber-50/60 flex items-center justify-between">
+          <div>
+            <span class="text-[10px] font-bold uppercase text-amber-800 tracking-wider">Intervalo Normativo de Próximo Control</span>
+            <p id="mdh-cita-intervalo" class="text-xs font-semibold text-slate-800 mt-0.5">Cada 15 días (Riesgo DNT)</p>
+          </div>
+          <div class="text-right">
+            <span class="text-[10px] font-bold uppercase text-slate-500">Fecha Estimada de Cita</span>
+            <p id="mdh-cita-fecha" class="text-xs font-bold text-sky-800 font-mono mt-0.5">-</p>
+          </div>
+        </div>
+
+        <!-- Bloque 5: Trazabilidad Institucional, Fuente y Observaciones -->
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <h4 class="font-bold text-slate-700 uppercase tracking-wider text-[11px] mb-2 flex items-center space-x-1.5">
+            <span>🏛️ Trazabilidad Institucional y Notificación</span>
+          </h4>
+          <div class="grid grid-cols-2 gap-2 mb-2">
+            <div><span class="text-slate-400 block text-[10px]">Fuente de Notificación:</span><span id="mdh-fuente" class="text-slate-700">-</span></div>
+            <div><span class="text-slate-400 block text-[10px]">Medio y Afiliación:</span><span id="mdh-medio-afiliacion" class="text-slate-700">-</span></div>
+            <div class="col-span-2"><span class="text-slate-400 block text-[10px]">Cooperante / Notificador:</span><strong id="mdh-cooperante" class="text-slate-800 block break-words">-</strong></div>
+            <div class="col-span-2" id="mdh-contenedor-gbai"><span class="text-slate-400 block text-[10px]">Gestión Territorial GBAI:</span><span id="mdh-gbai" class="text-slate-700 block">-</span></div>
+          </div>
+          <div>
+            <span class="text-slate-400 block text-[10px] mb-0.5">Observaciones Clínicas y Administrativas:</span>
+            <p id="mdh-observaciones" class="p-2 bg-white rounded border border-slate-200 text-slate-700 whitespace-pre-wrap text-xs font-normal">-</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pie del Modal -->
+      <div class="pt-3 border-t border-slate-200 flex justify-end space-x-2 flex-shrink-0">
+        <button type="button" onclick="cerrarModalDetalleHito()" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+          Cerrar Ficha
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: EDITAR / ACTUALIZAR NOTIFICACIÓN (FT-003) -->
+  <div id="modal-editar-notificacion" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full p-6 space-y-4 my-8 border border-slate-100 max-h-[90vh] flex flex-col">
+      <!-- Encabezado Modal -->
+      <div class="flex justify-between items-start border-b border-slate-200 pb-3 flex-shrink-0">
+        <div class="flex items-center space-x-3">
+          <span class="text-3xl p-2 bg-sky-50 text-sky-700 rounded-xl">📋</span>
+          <div>
+            <div class="flex items-center space-x-2">
+              <h3 class="text-lg font-black text-slate-900">Editar Notificación Oficial (FT-003)</h3>
+              <span id="men-caso-id-badge" class="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-sky-100 text-sky-800">Caso #</span>
+            </div>
+            <p id="men-subtitulo" class="text-xs text-slate-500 mt-0.5">-</p>
+          </div>
+        </div>
+        <button type="button" onclick="cerrarModalEditarNotificacion()" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-lg hover:bg-slate-100 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- Formulario Scrolleable -->
+      <form id="form-editar-notificacion" onsubmit="guardarEdicionNotificacion(event)" class="overflow-y-auto space-y-4 pr-1 text-xs custom-scrollbar flex-1">
+        <input type="hidden" id="men-caso-id">
+
+        <!-- Bloque 1: Fuente y Datos de la Notificación -->
+        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-3">
+          <h4 class="font-bold text-slate-800 uppercase tracking-wider text-[11px] flex items-center space-x-1.5">
+            <span>📡 1. Datos de Notificación y Cooperante</span>
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Fuente Notificación</label>
+              <select id="men-fuente" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs">
+                <option value="Evento 114: Riesgo DNT">Evento 114: Riesgo DNT</option>
+                <option value="Evento 113: DNT Aguda">Evento 113: DNT Aguda</option>
+                <option value="Comunidad">Comunidad</option>
+                <option value="Demanda Espontanea">Demanda Espontánea</option>
+                <option value="Remision Externa">Remisión Externa</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Fecha de Notificación</label>
+              <input type="date" id="men-fecha-notificacion" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Medio Notificación</label>
+              <input type="text" id="men-medio" placeholder="Ej: Correo, Ficha, WhatsApp" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs">
+            </div>
+            <div class="sm:col-span-2 lg:col-span-3">
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Cooperante / Notificador</label>
+              <input type="text" id="men-cooperante" placeholder="Nombre de entidad, IPS o líder notificador" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs">
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 2: Captación Inicial (Antropometría de Notificación) -->
+        <div class="bg-amber-50/40 p-3.5 rounded-xl border border-amber-200 space-y-3">
+          <h4 class="font-bold text-amber-900 uppercase tracking-wider text-[11px] flex items-center space-x-1.5">
+            <span>📍 2. Captación Inicial (Medidas Reportadas en Notificación)</span>
+          </h4>
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Fecha Captación</label>
+              <input type="date" id="men-fecha-captacion" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Peso (kg)</label>
+              <input type="number" step="0.01" id="men-peso-inicial" placeholder="0.00" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs font-mono">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Talla (cm)</label>
+              <input type="number" step="0.1" id="men-talla-inicial" placeholder="0.0" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs font-mono">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">PB (cm)</label>
+              <input type="number" step="0.1" id="men-pb-inicial" placeholder="0.0" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs font-mono">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Z-Score P/T</label>
+              <input type="number" step="0.01" id="men-zscore-inicial" placeholder="-0.00" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs font-mono font-bold text-amber-800">
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 3: Gestión Territorial GBAI -->
+        <div class="bg-sky-50/40 p-3.5 rounded-xl border border-sky-200 space-y-3">
+          <h4 class="font-bold text-sky-900 uppercase tracking-wider text-[11px] flex items-center space-x-1.5">
+            <span>🏃 3. Búsqueda Activa Institucional (GBAI)</span>
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Fecha Búsqueda GBAI</label>
+              <input type="date" id="men-fecha-gbai" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Asignación Interna</label>
+              <input type="text" id="men-asignacion-gbai" placeholder="Equipo asignado" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Estado de Búsqueda</label>
+              <select id="men-estado-gbai" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs">
+                <option value="">(Sin registrar)</option>
+                <option value="Efectiva">Efectiva</option>
+                <option value="En Búsqueda">En Búsqueda</option>
+                <option value="No Efectiva">No Efectiva</option>
+                <option value="Reubicado">Reubicado</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque 4: Primera Atención IPSI -->
+        <div class="bg-emerald-50/40 p-3.5 rounded-xl border border-emerald-200 space-y-3">
+          <h4 class="font-bold text-emerald-900 uppercase tracking-wider text-[11px] flex items-center space-x-1.5">
+            <span>🩺 4. Primera Atención IPSI (Ingreso a Ruta de Atención)</span>
+          </h4>
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Fecha 1ra Atención</label>
+              <input type="date" id="men-fecha-atencion" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Peso Aten. (kg)</label>
+              <input type="number" step="0.01" id="men-peso-atencion" placeholder="0.00" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs font-mono">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Talla Aten. (cm)</label>
+              <input type="number" step="0.1" id="men-talla-atencion" placeholder="0.0" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs font-mono">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">PB Aten. (cm)</label>
+              <input type="number" step="0.1" id="men-pb-atencion" placeholder="0.0" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs font-mono">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Z-Score 1ra Aten.</label>
+              <input type="number" step="0.01" id="men-zscore-atencion" placeholder="-0.00" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs font-mono font-bold text-emerald-800">
+            </div>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 border-t border-emerald-100">
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Prueba de Apetito</label>
+              <select id="men-apetito" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs">
+                <option value="">(No aplica)</option>
+                <option value="Positiva">Positiva (Pasa)</option>
+                <option value="Negativa">Negativa (Falla)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Tratamiento Inicial</label>
+              <input type="text" id="men-tratamiento" placeholder="FTLC, Micronutrientes..." class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Sobres FTLC</label>
+              <input type="number" id="men-sobres" placeholder="0" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs font-mono">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Escenario Manejo</label>
+              <select id="men-escenario" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs">
+                <option value="Ambulatorio">Ambulatorio</option>
+                <option value="Hospitalario">Hospitalario</option>
+                <option value="Intrahospitalario">Intrahospitalario</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Comorbilidad Inicial</label>
+            <input type="text" id="men-comorbilidad" placeholder="Infección respiratoria, EDA, anemia..." class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs">
+          </div>
+        </div>
+
+        <!-- Bloque 5: Contacto Familiar, Georreferenciación y Estado Caso -->
+        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-3">
+          <h4 class="font-bold text-slate-800 uppercase tracking-wider text-[11px] flex items-center space-x-1.5">
+            <span>🏡 5. Contacto Familiar, Ubicación y Estado</span>
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Cuidador(a) / Acudiente</label>
+              <input type="text" id="men-cuidador" placeholder="Nombre completo acudiente" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Teléfono de Contacto</label>
+              <input type="text" id="men-telefono" placeholder="Número celular / WhatsApp" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs font-mono">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Estado del Caso</label>
+              <select id="men-estado-caso" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs font-semibold">
+                <option value="En seguimiento">En seguimiento</option>
+                <option value="Cerrado">Cerrado</option>
+                <option value="En Busqueda">En Búsqueda</option>
+              </select>
+            </div>
+            <div class="sm:col-span-3">
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Comunidad / Georreferenciación / Dirección</label>
+              <input type="text" id="men-georreferenciacion" placeholder="Comunidad, sector, punto de referencia" class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs">
+            </div>
+            <div class="sm:col-span-3">
+              <label class="block text-[10px] font-bold text-slate-600 uppercase mb-1">Observaciones Generales</label>
+              <textarea id="men-observaciones" rows="2" placeholder="Notas clínicas o administrativas..." class="w-full py-1.5 px-2 rounded-lg border border-slate-300 bg-white text-xs"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pie de Formulario y Acciones -->
+        <div class="pt-3 border-t border-slate-200 flex justify-between items-center flex-shrink-0">
+          <div id="men-mensaje-estado" class="text-xs font-medium text-slate-500"></div>
+          <div class="flex space-x-2">
+            <button type="button" onclick="cerrarModalEditarNotificacion()" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+              Cancelar
+            </button>
+            <button type="submit" id="men-btn-guardar" class="px-4 py-2 rounded-xl text-xs font-bold bg-sky-600 hover:bg-sky-500 text-white shadow-sm transition flex items-center space-x-1.5">
+              <span>Guardar Cambios</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- BOTÓN FLOTANTE VOLVER A LA LISTA (SOLO EN EXPEDIENTE) -->
+  <div id="exp-boton-flotante-volver" class="fixed bottom-6 left-6 z-30 hidden">
+    <button onclick="volverDeExpediente()" class="flex items-center space-x-2 px-4 py-2.5 rounded-full text-xs font-bold bg-slate-900 text-white shadow-2xl hover:bg-sky-700 transition border border-slate-700 backdrop-blur-md">
+      <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+      </svg>
+      <span id="exp-btn-flotante-texto">← Volver a la Lista</span>
+    </button>
+  </div>
+
+  <!-- MODAL: BÚSQUEDA GLOBAL RÁPIDA (CTRL + K) -->
+  <div id="modal-busqueda-global" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-start justify-center pt-16 sm:pt-24 px-4 transition-opacity">
+    <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 max-w-2xl w-full overflow-hidden flex flex-col max-h-[80vh]">
+      <!-- Input de búsqueda -->
+      <div class="relative flex items-center px-4 py-3.5 border-b border-slate-200 bg-slate-50/50">
+        <svg class="w-5 h-5 text-sky-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <input 
+          type="text" 
+          id="input-busqueda-global" 
+          placeholder="Escriba documento (RC, TI), nombres del menor o acudiente..." 
+          class="w-full bg-transparent border-0 focus:outline-none text-slate-800 text-sm placeholder-slate-400 font-medium"
+          autocomplete="off"
+        />
+        <div class="flex items-center space-x-2 ml-2">
+          <kbd class="font-mono text-[10px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded border border-slate-300">ESC</kbd>
+          <button onclick="cerrarBusquedaGlobal()" class="text-slate-400 hover:text-slate-600 p-1 rounded-md hover:bg-slate-100 transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lista de resultados -->
+      <div id="lista-resultados-busqueda" class="p-2 overflow-y-auto divide-y divide-slate-100 max-h-[58vh] custom-scrollbar">
+        <div class="py-10 text-center text-slate-400 text-xs">
+          <div class="w-10 h-10 mx-auto mb-2 text-slate-300 text-2xl">🔍</div>
+          <p class="font-semibold text-slate-600">Búsqueda rápida en toda la IPSI</p>
+          <p class="text-[11px] text-slate-400 mt-1">Escriba cualquier número de cédula o nombre para abrir de inmediato su ficha.</p>
+        </div>
+      </div>
+
+      <!-- Pie del buscador -->
+      <div class="px-4 py-2.5 bg-slate-50 border-t border-slate-200 text-[11px] text-slate-500 flex justify-between items-center">
+        <span class="flex items-center space-x-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+          <span>Búsqueda institucional en tiempo real</span>
+        </span>
+        <span class="flex items-center space-x-2 text-[10px]">
+          <span>Navegar: <kbd class="font-mono bg-white px-1 py-0.5 rounded border">↑</kbd> <kbd class="font-mono bg-white px-1 py-0.5 rounded border">↓</kbd></span>
+          <span>Abrir: <kbd class="font-mono bg-white px-1 py-0.5 rounded border">ENTER</kbd></span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: CENTRO DE ALERTAS DE RESCATE NUTRICIONAL -->
+  <div id="modal-alertas-rescate" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-2.5 sm:p-6 transition-opacity">
+    <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 max-w-5xl w-full flex flex-col max-h-[92vh] overflow-hidden modal-dialog-responsive">
+      <!-- Encabezado del modal -->
+      <div class="px-4 sm:px-6 py-3.5 sm:py-4 bg-gradient-to-r from-rose-800 to-rose-950 text-white flex justify-between items-center border-b border-rose-700">
+        <div class="flex items-center space-x-2.5 sm:space-x-3 min-w-0">
+          <div class="bg-white/10 p-2 rounded-xl backdrop-blur-sm text-xl sm:text-2xl flex-shrink-0">
+            🚨
+          </div>
+          <div class="min-w-0">
+            <h3 class="text-sm sm:text-lg font-black tracking-tight flex flex-wrap items-center gap-1.5 sm:gap-2">
+              <span class="truncate">Centro de Alertas de Rescate Nutricional</span>
+              <span class="bg-white/20 text-[10px] sm:text-xs px-2.5 py-0.5 rounded-full font-mono font-bold" id="modal-alertas-total-badge">0 alertas</span>
+            </h3>
+            <p class="text-[11px] sm:text-xs text-rose-200 truncate">Vigilancia epidemiológica temprana y rescate de casos vulnerables • Res. 2350 / 000115</p>
+          </div>
+        </div>
+        <button onclick="cerrarModalAlertasRescate()" class="text-rose-200 hover:text-white p-1 rounded-lg hover:bg-white/10 transition flex-shrink-0 ml-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- Barra de pestañas de alerta (Diseño Pills despejado y legible sin corte de texto) -->
+      <div class="bg-slate-100 px-3 sm:px-6 py-2.5 sm:py-3 border-b border-slate-200 flex flex-wrap gap-2 items-center">
+        <button onclick="cambiarPestanaAlerta('perdida_peso')" id="tab-btn-alerta-perdida" class="tab-alerta-btn px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold transition flex items-center space-x-1.5 sm:space-x-2 bg-white text-rose-700 shadow-sm border border-rose-300 ring-1 ring-rose-200">
+          <span>🔴 Pérdida de Peso (Desmejora)</span>
+          <span id="badge-alerta-perdida" class="px-2 py-0.5 rounded-full text-[10px] bg-rose-100 text-rose-800 font-black">0</span>
+        </button>
+        <button onclick="cambiarPestanaAlerta('estancamiento')" id="tab-btn-alerta-estancamiento" class="tab-alerta-btn px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold transition flex items-center space-x-1.5 sm:space-x-2 bg-slate-200/80 text-slate-700 hover:bg-slate-300 border border-transparent">
+          <span>🟡 Estancamiento (&lt; 5 g/kg/d)</span>
+          <span id="badge-alerta-estancamiento" class="px-2 py-0.5 rounded-full text-[10px] bg-amber-100 text-amber-800 font-black">0</span>
+        </button>
+        <button onclick="cambiarPestanaAlerta('abandono')" id="tab-btn-alerta-abandono" class="tab-alerta-btn px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold transition flex items-center space-x-1.5 sm:space-x-2 bg-slate-200/80 text-slate-700 hover:bg-slate-300 border border-transparent">
+          <span>🟠 Riesgo de Abandono (&gt; 15 días)</span>
+          <span id="badge-alerta-abandono" class="px-2 py-0.5 rounded-full text-[10px] bg-orange-100 text-orange-800 font-black">0</span>
+        </button>
+        <button onclick="cambiarPestanaAlerta('proximos_egresos')" id="tab-btn-alerta-egresos" class="tab-alerta-btn px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold transition flex items-center space-x-1.5 sm:space-x-2 bg-slate-200/80 text-slate-700 hover:bg-slate-300 border border-transparent">
+          <span>🔵 Próximos Egresos (59 Meses)</span>
+          <span id="badge-alerta-egresos" class="px-2 py-0.5 rounded-full text-[10px] bg-sky-100 text-sky-800 font-black">0</span>
+        </button>
+      </div>
+
+      <!-- Contenedor del contenido de la alerta -->
+      <div class="p-3 sm:p-6 flex-1 overflow-y-auto custom-scrollbar bg-slate-50">
+        <div id="contenedor-lista-alertas" class="space-y-3">
+          <!-- Se inyecta dinámicamente con JS -->
+        </div>
+      </div>
+
+      <!-- Pie de modal -->
+      <div class="px-6 py-3 bg-white border-t border-slate-200 flex justify-between items-center">
+        <span class="text-xs text-slate-500">
+          💡 Las alertas se calculan en vivo según la evolución ponderal y la fecha de citas.
+        </span>
+        <div class="flex space-x-2">
+          <button onclick="cerrarModalAlertasRescate()" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/app.js?v=3.1"></script>
+</body>
+</html>

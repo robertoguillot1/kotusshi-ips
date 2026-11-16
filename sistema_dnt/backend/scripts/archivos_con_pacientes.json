@@ -1,0 +1,3093 @@
+[
+  {
+    "id": 1,
+    "ruta": "3. PM-RIA-FT-003-004 Notificacion Y seguimiento DNT y Riesgo DNT.xlsx",
+    "nombre": "3. PM-RIA-FT-003-004 Notificacion Y seguimiento DNT y Riesgo DNT.xlsx",
+    "tamano_kb": 4840.6,
+    "hojas_validas": [
+      {
+        "hoja": "Portada",
+        "fila_header": 4,
+        "col_doc": "Actualizada según Resolución 000115 de 2026 (que modifica la Resolución 2350 de 2020) y demás normatividad vigente.",
+        "col_nombre": null,
+        "total_cols": 1
+      },
+      {
+        "hoja": "Listas",
+        "fila_header": 0,
+        "col_doc": "Tipo Documento",
+        "col_nombre": null,
+        "total_cols": 15
+      },
+      {
+        "hoja": "Notificados",
+        "fila_header": 7,
+        "col_doc": "Tipo ID",
+        "col_nombre": "Primer Nombre",
+        "total_cols": 48
+      },
+      {
+        "hoja": "Casos en Seguimiento ",
+        "fila_header": 7,
+        "col_doc": "Tipo Documento",
+        "col_nombre": "Primer Nombre",
+        "total_cols": 596
+      },
+      {
+        "hoja": "Dashboard",
+        "fila_header": 3,
+        "col_doc": "Registros duplicados (documento)",
+        "col_nombre": null,
+        "total_cols": 7
+      },
+      {
+        "hoja": "Seguimientos Cerrados ",
+        "fila_header": 2,
+        "col_doc": "Tipo Documento",
+        "col_nombre": "Primer Nombre",
+        "total_cols": 544
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "ruta": "PACIENTES_NOTIFICADOS_DNT_ MATRIZ 2025 - 2026 F.C - NEP (77).xlsx",
+    "nombre": "PACIENTES_NOTIFICADOS_DNT_ MATRIZ 2025 - 2026 F.C - NEP (77).xlsx",
+    "tamano_kb": 7221.9,
+    "hojas_validas": [
+      {
+        "hoja": "MATRIZ DNT FAMILIAR ",
+        "fila_header": 2,
+        "col_doc": "nombre de entidad que notifica al sivigila ",
+        "col_nombre": "Primer Nombre",
+        "total_cols": 54
+      },
+      {
+        "hoja": "MATRIZ DNT NUEVA EPS ",
+        "fila_header": 2,
+        "col_doc": "nombre de entidad que notifica al sivigila ",
+        "col_nombre": "Primer Nombre",
+        "total_cols": 54
+      },
+      {
+        "hoja": "BD_Ministerio",
+        "fila_header": 0,
+        "col_doc": "ID",
+        "col_nombre": "pri_nom_",
+        "total_cols": 361
+      },
+      {
+        "hoja": "BASE_NOTIFICACION",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 41
+      },
+      {
+        "hoja": "BASE DE SEGUIMIENTO",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 730
+      },
+      {
+        "hoja": "Hoja3",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 13
+      },
+      {
+        "hoja": "Hoja2",
+        "fila_header": 0,
+        "col_doc": "Nomb_cuidador",
+        "col_nombre": "pri_nom_",
+        "total_cols": 10
+      },
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "Nomb_cuidador",
+        "col_nombre": "pri_nom_",
+        "total_cols": 10
+      },
+      {
+        "hoja": "REPORTE",
+        "fila_header": 6,
+        "col_doc": "ATENDIDO ",
+        "col_nombre": null,
+        "total_cols": 3
+      },
+      {
+        "hoja": "REPORTE FAMILIAR",
+        "fila_header": 6,
+        "col_doc": "ATENDIDO ",
+        "col_nombre": null,
+        "total_cols": 3
+      },
+      {
+        "hoja": "INDI. GRAL",
+        "fila_header": 1,
+        "col_doc": "Porcentaje de niños menores de 5 años, identificados con DNT aguda de etiología primaria, de forma adecuada.",
+        "col_nombre": null,
+        "total_cols": 1
+      },
+      {
+        "hoja": "INDI. FLIAR COL",
+        "fila_header": 1,
+        "col_doc": "Porcentaje de niños menores de 5 años, identificados con DNT aguda de etiología primaria, de forma adecuada.",
+        "col_nombre": null,
+        "total_cols": 1
+      },
+      {
+        "hoja": "INDI. NUEVA EPS",
+        "fila_header": 1,
+        "col_doc": "Porcentaje de niños menores de 5 años, identificados con DNT aguda de etiología primaria, de forma adecuada.",
+        "col_nombre": null,
+        "total_cols": 1
+      },
+      {
+        "hoja": "MUNICIPIOS",
+        "fila_header": 3,
+        "col_doc": "RECAIDA",
+        "col_nombre": null,
+        "total_cols": 11
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "ruta": "BASE DE DATOS F.C 2026\\1. BASE DE DATOS RIOHACHA (3).xlsx",
+    "nombre": "1. BASE DE DATOS RIOHACHA (3).xlsx",
+    "tamano_kb": 40.5,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 128
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "ruta": "BASE DE DATOS F.C 2026\\113 A PRESENTAR_15 DE JULIO.xlsx",
+    "nombre": "113 A PRESENTAR_15 DE JULIO.xlsx",
+    "tamano_kb": 73.5,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 133
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "ruta": "BASE DE DATOS F.C 2026\\113_ REPORTE S.E 9 (2).xlsx",
+    "nombre": "113_ REPORTE S.E 9 (2).xlsx",
+    "tamano_kb": 192.8,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "ruta": "BASE DE DATOS F.C 2026\\114 A PRESENTAR_ 15 JULIO (2).xlsx",
+    "nombre": "114 A PRESENTAR_ 15 JULIO (2).xlsx",
+    "tamano_kb": 426.0,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "ruta": "BASE DE DATOS F.C 2026\\114 FAMILIAR EPS - SE 18 (6).xlsx",
+    "nombre": "114 FAMILIAR EPS - SE 18 (6).xlsx",
+    "tamano_kb": 224.2,
+    "hojas_validas": [
+      {
+        "hoja": "114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 122
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "ruta": "BASE DE DATOS F.C 2026\\2026 SEGUIMIENTO NOMINAL - SSM URIBIA (1).xlsx",
+    "nombre": "2026 SEGUIMIENTO NOMINAL - SSM URIBIA (1).xlsx",
+    "tamano_kb": 1690.7,
+    "hojas_validas": [
+      {
+        "hoja": "DNT Y RIESGO DNT",
+        "fila_header": 1,
+        "col_doc": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "col_nombre": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "total_cols": 64
+      },
+      {
+        "hoja": "DNT Y RIESGO",
+        "fila_header": 1,
+        "col_doc": "NOMBRES Y APELLIDOS",
+        "col_nombre": "NOMBRES Y APELLIDOS",
+        "total_cols": 136
+      },
+      {
+        "hoja": "MATERNIDAD",
+        "fila_header": 0,
+        "col_doc": "NOMBRES Y APELLIDOS",
+        "col_nombre": "NOMBRES Y APELLIDOS",
+        "total_cols": 55
+      },
+      {
+        "hoja": "IRA",
+        "fila_header": 1,
+        "col_doc": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "col_nombre": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "total_cols": 45
+      },
+      {
+        "hoja": "EDA",
+        "fila_header": 1,
+        "col_doc": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "col_nombre": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "total_cols": 45
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_ 113_ SEMANA 6. (2).xlsx",
+    "nombre": "2026_ 113_ SEMANA 6. (2).xlsx",
+    "tamano_kb": 131.7,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_113 Reporte 24 (4).xlsx",
+    "nombre": "2026_113 Reporte 24 (4).xlsx",
+    "tamano_kb": 4200.9,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 126
+      },
+      {
+        "hoja": "BASE DEPURADA ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "EDEMA ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "PB<11.5",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "HOSPITALIZADOS SE 10-13",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "SISPRO",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 78
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_113 s.e 14 DNTA (1) (1).xlsx",
+    "nombre": "2026_113 s.e 14 DNTA (1) (1).xlsx",
+    "tamano_kb": 322.3,
+    "hojas_validas": [
+      {
+        "hoja": "Sivigila desde semana 11 ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "Hospitalizados",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "Perimetro Braquial menor de 11 ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "dnt sispro sin seg",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 83
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_113_BASE DEPURADA.xlsx",
+    "nombre": "2026_113_BASE DEPURADA.xlsx",
+    "tamano_kb": 758.7,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_113_Reporte (29) (1) (4).xlsx",
+    "nombre": "2026_113_Reporte (29) (1) (4).xlsx",
+    "tamano_kb": 797.9,
+    "hojas_validas": [
+      {
+        "hoja": "SISPRO",
+        "fila_header": 0,
+        "col_doc": "PrimerApellido",
+        "col_nombre": null,
+        "total_cols": 88
+      },
+      {
+        "hoja": "SIVIGILA",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 132
+      },
+      {
+        "hoja": "EVENTO 114",
+        "fila_header": 1,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 51
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_113_Reporte (29) (5).xlsx",
+    "nombre": "2026_113_Reporte (29) (5).xlsx",
+    "tamano_kb": 570.5,
+    "hojas_validas": [
+      {
+        "hoja": "BASE DEPURADA ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "SISPRO",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 83
+      },
+      {
+        "hoja": "REINCIDENTE 2026",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "EDEMA ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "HOSPITALIZADOS ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "P<11.5",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_113_Reporte (36) (1) (3).xlsx",
+    "nombre": "2026_113_Reporte (36) (1) (3).xlsx",
+    "tamano_kb": 1040.5,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 129
+      },
+      {
+        "hoja": " BASE DEPURADA",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_113_Reporte (46) (1) (3) (1).xlsx",
+    "nombre": "2026_113_Reporte (46) (1) (3) (1).xlsx",
+    "tamano_kb": 1270.9,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 129
+      },
+      {
+        "hoja": "BASE DEPURADA",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_113_Reporte (48) (1).xlsx",
+    "nombre": "2026_113_Reporte (48) (1).xlsx",
+    "tamano_kb": 1812.3,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 129
+      },
+      {
+        "hoja": "BASE DEPURADA ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      },
+      {
+        "hoja": "SE 29",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_113_Reporte (55) (3).xlsx",
+    "nombre": "2026_113_Reporte (55) (3).xlsx",
+    "tamano_kb": 1566.0,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 129
+      },
+      {
+        "hoja": "BASE DEPURADA ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_113_Reporte (66) (1).xlsx",
+    "nombre": "2026_113_Reporte (66) (1).xlsx",
+    "tamano_kb": 883.8,
+    "hojas_validas": [
+      {
+        "hoja": "BASE DEPURADA ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 131
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_113_Reporte (66) (2).xlsx",
+    "nombre": "2026_113_Reporte (66) (2).xlsx",
+    "tamano_kb": 883.8,
+    "hojas_validas": [
+      {
+        "hoja": "BASE DEPURADA ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 131
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_113_S.E 40 (1).xlsx",
+    "nombre": "2026_113_S.E 40 (1).xlsx",
+    "tamano_kb": 810.5,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_113_S.E 40 MIERCOLES 21 OCT (2).xlsx",
+    "nombre": "2026_113_S.E 40 MIERCOLES 21 OCT (2).xlsx",
+    "tamano_kb": 834.8,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      },
+      {
+        "hoja": "FAMILIAR DE COLOMBIA",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      },
+      {
+        "hoja": "PROTEGER",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      },
+      {
+        "hoja": "NUEVA EPS",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      },
+      {
+        "hoja": "DUSAKAWI",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      },
+      {
+        "hoja": "ANAS WAYUU",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      },
+      {
+        "hoja": "SANITAS",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 132
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_114_Reporte (16) (1) (2).xlsx",
+    "nombre": "2026_114_Reporte (16) (1) (2).xlsx",
+    "tamano_kb": 2685.9,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 126
+      },
+      {
+        "hoja": "base depurada",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_114_Reporte (23) (1) (1).xlsx",
+    "nombre": "2026_114_Reporte (23) (1) (1).xlsx",
+    "tamano_kb": 6231.8,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 126
+      },
+      {
+        "hoja": "base depurada ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "29",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "ruta": "BASE DE DATOS F.C 2026\\A RETROALIMENTAR_FAMILIAR EPS_SE 25 (1).xlsx",
+    "nombre": "A RETROALIMENTAR_FAMILIAR EPS_SE 25 (1).xlsx",
+    "tamano_kb": 35.4,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 98
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "ruta": "BASE DE DATOS F.C 2026\\BASE 412 (1).xlsx",
+    "nombre": "BASE 412 (1).xlsx",
+    "tamano_kb": 15.4,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 27
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "ruta": "BASE DE DATOS F.C 2026\\BASE A PRESENTAR COMITÉ DE EMERGENCIA 18 AL 21 DE AGOSTO (4).xlsx",
+    "nombre": "BASE A PRESENTAR COMITÉ DE EMERGENCIA 18 AL 21 DE AGOSTO (4).xlsx",
+    "tamano_kb": 641.4,
+    "hojas_validas": [
+      {
+        "hoja": "Evento 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      },
+      {
+        "hoja": "Evento 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "ruta": "BASE DE DATOS F.C 2026\\BASE A PRESENTAR EN COMITE DE EMERGENCIA (URIBIA) 09 DE SEPTIEMBRE.xlsx",
+    "nombre": "BASE A PRESENTAR EN COMITE DE EMERGENCIA (URIBIA) 09 DE SEPTIEMBRE.xlsx",
+    "tamano_kb": 2761.6,
+    "hojas_validas": [
+      {
+        "hoja": "URIBIA",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 132
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "ruta": "BASE DE DATOS F.C 2026\\BASE A PRESENTAR EN COMITE DE EMERGENCIA NUTRICIONAL ( MANAURE) (2).xlsx",
+    "nombre": "BASE A PRESENTAR EN COMITE DE EMERGENCIA NUTRICIONAL ( MANAURE) (2).xlsx",
+    "tamano_kb": 38.6,
+    "hojas_validas": [
+      {
+        "hoja": "MANAURE ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 132
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "ruta": "BASE DE DATOS F.C 2026\\Base de datos del municipio de riohacha 11 de mayo (2) (1).xlsx",
+    "nombre": "Base de datos del municipio de riohacha 11 de mayo (2) (1).xlsx",
+    "tamano_kb": 8600.8,
+    "hojas_validas": [
+      {
+        "hoja": "SISPRO",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 83
+      },
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 132
+      },
+      {
+        "hoja": "EVENTO 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 26
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "ruta": "BASE DE DATOS F.C 2026\\Base de datos DNT en menores de 5 años sin seguimiento – SISPRO- (1).xlsx",
+    "nombre": "Base de datos DNT en menores de 5 años sin seguimiento – SISPRO- (1).xlsx",
+    "tamano_kb": 49.4,
+    "hojas_validas": [
+      {
+        "hoja": "SIN SEGUIMIENTO",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 83
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "ruta": "BASE DE DATOS F.C 2026\\BASE DE DATOS SISPRO 20 DE MAYO DEL 2026 (2).xlsx",
+    "nombre": "BASE DE DATOS SISPRO 20 DE MAYO DEL 2026 (2).xlsx",
+    "tamano_kb": 103.3,
+    "hojas_validas": [
+      {
+        "hoja": "EVENTO 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "SISPRO",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 78
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "ruta": "BASE DE DATOS F.C 2026\\base del 17 de junio del 2026 (1).xlsx",
+    "nombre": "base del 17 de junio del 2026 (1).xlsx",
+    "tamano_kb": 8145.9,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja2",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 71
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "ruta": "BASE DE DATOS F.C 2026\\base sispro 14 de abril 2026 actualizada (2).xlsx",
+    "nombre": "base sispro 14 de abril 2026 actualizada (2).xlsx",
+    "tamano_kb": 37.9,
+    "hojas_validas": [
+      {
+        "hoja": "Riesgo",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 84
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "ruta": "BASE DE DATOS F.C 2026\\BASES CRUZADAS (1).xlsx",
+    "nombre": "BASES CRUZADAS (1).xlsx",
+    "tamano_kb": 805.0,
+    "hojas_validas": [
+      {
+        "hoja": "RIESGO",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 128
+      },
+      {
+        "hoja": "DNT",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      },
+      {
+        "hoja": "DNTA + RIESGO",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 130
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "ruta": "BASE DE DATOS F.C 2026\\CARGUE (1).xlsx",
+    "nombre": "CARGUE (1).xlsx",
+    "tamano_kb": 33.0,
+    "hojas_validas": [
+      {
+        "hoja": "412",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 28
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "ruta": "BASE DE DATOS F.C 2026\\CARGUE 412 (3).xlsx",
+    "nombre": "CARGUE 412 (3).xlsx",
+    "tamano_kb": 14.9,
+    "hojas_validas": [
+      {
+        "hoja": "CIRCULAR 412",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 28
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "ruta": "BASE DE DATOS F.C 2026\\CARGUE CASOS PARA SEGUIMIENTO (1).xlsx",
+    "nombre": "CARGUE CASOS PARA SEGUIMIENTO (1).xlsx",
+    "tamano_kb": 12.0,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 28
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "ruta": "BASE DE DATOS F.C 2026\\Cargue de nuevos casos (2).xlsx",
+    "nombre": "Cargue de nuevos casos (2).xlsx",
+    "tamano_kb": 24.2,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 29
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "ruta": "BASE DE DATOS F.C 2026\\CARGUE DE NUEVOS CASOS EVENTO 113 Y FUENTES ASOCIADAS (1) (1).xlsx",
+    "nombre": "CARGUE DE NUEVOS CASOS EVENTO 113 Y FUENTES ASOCIADAS (1) (1).xlsx",
+    "tamano_kb": 22.9,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 23
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "ruta": "BASE DE DATOS F.C 2026\\cargue kottushi.xlsx",
+    "nombre": "cargue kottushi.xlsx",
+    "tamano_kb": 16.8,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 29
+      },
+      {
+        "hoja": "PLAN DE CHOQUE ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 22
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "ruta": "BASE DE DATOS F.C 2026\\CARGUE PLAN DE CHOQUE Y 412 13052026 (3).xlsx",
+    "nombre": "CARGUE PLAN DE CHOQUE Y 412 13052026 (3).xlsx",
+    "tamano_kb": 14.7,
+    "hojas_validas": [
+      {
+        "hoja": "PLAN DE CHOQUE ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 19
+      },
+      {
+        "hoja": "FUENTES ASOCIADAS 412",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 27
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "ruta": "BASE DE DATOS F.C 2026\\CASOS A PRESENTAR COMITE DE SENTENCIA T-302 RIOHACHA (2).xlsx",
+    "nombre": "CASOS A PRESENTAR COMITE DE SENTENCIA T-302 RIOHACHA (2).xlsx",
+    "tamano_kb": 304.4,
+    "hojas_validas": [
+      {
+        "hoja": "RIESGO DNT",
+        "fila_header": 0,
+        "col_doc": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "col_nombre": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "total_cols": 62
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "ruta": "BASE DE DATOS F.C 2026\\casos a presentar en comite de emergencia nutricional (1).xlsx",
+    "nombre": "casos a presentar en comite de emergencia nutricional (1).xlsx",
+    "tamano_kb": 87.1,
+    "hojas_validas": [
+      {
+        "hoja": "RIOHACHA",
+        "fila_header": 0,
+        "col_doc": "Detalles para Cuenta de IdPersona - NomClasificacionNutricional: (blank), NomMpioResidencia: RIOHACHA, Fuente: SIVIGILA, EstadoVital: Vivo, UltimoSeguimiento: True (+)",
+        "col_nombre": null,
+        "total_cols": 1
+      },
+      {
+        "hoja": "MAICAO",
+        "fila_header": 0,
+        "col_doc": "Detalles para Cuenta de IdPersona - NomClasificacionNutricional: (blank), NomMpioResidencia: MAICAO, Fuente: SIVIGILA, EstadoVital: Vivo, UltimoSeguimiento: True (+)",
+        "col_nombre": null,
+        "total_cols": 1
+      },
+      {
+        "hoja": "URIBIA",
+        "fila_header": 0,
+        "col_doc": "Detalles para Cuenta de IdPersona - NomClasificacionNutricional: (blank), NomMpioResidencia: URIBIA, Fuente: SIVIGILA, EstadoVital: Vivo, UltimoSeguimiento: True (+)",
+        "col_nombre": null,
+        "total_cols": 1
+      },
+      {
+        "hoja": "MANAURE",
+        "fila_header": 0,
+        "col_doc": "Detalles para Cuenta de IdPersona - NomClasificacionNutricional: (blank), NomMpioResidencia: MANAURE, Fuente: SIVIGILA, EstadoVital: Vivo, UltimoSeguimiento: True (+)",
+        "col_nombre": null,
+        "total_cols": 1
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "ruta": "BASE DE DATOS F.C 2026\\CASOS A PRESENTAR. (2).xlsx",
+    "nombre": "CASOS A PRESENTAR. (2).xlsx",
+    "tamano_kb": 57.4,
+    "hojas_validas": [
+      {
+        "hoja": "DNT ",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 83
+      },
+      {
+        "hoja": "RIESGO",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 83
+      },
+      {
+        "hoja": "BUSQUEDAS FALLIDAS",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 83
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "ruta": "BASE DE DATOS F.C 2026\\CASOS DE SENTENCIA T-302 MAICAO (2).xlsx",
+    "nombre": "CASOS DE SENTENCIA T-302 MAICAO (2).xlsx",
+    "tamano_kb": 53.6,
+    "hojas_validas": [
+      {
+        "hoja": "Maicao ",
+        "fila_header": 2,
+        "col_doc": "PRIMER APELLIDO ",
+        "col_nombre": null,
+        "total_cols": 48
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "ruta": "BASE DE DATOS F.C 2026\\COMITE DE EMERGENCIA NUTRICIONAL 6 DE JULIO.xlsx",
+    "nombre": "COMITE DE EMERGENCIA NUTRICIONAL 6 DE JULIO.xlsx",
+    "tamano_kb": 36.3,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 126
+      },
+      {
+        "hoja": "VERIFICACION",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 9
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "ruta": "BASE DE DATOS F.C 2026\\Copia de MENORES EN RIESGO - FAMILIAR DE COLOMBIA (1).xlsx",
+    "nombre": "Copia de MENORES EN RIESGO - FAMILIAR DE COLOMBIA (1).xlsx",
+    "tamano_kb": 10.9,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja 1",
+        "fila_header": 1,
+        "col_doc": "NOMBRE DEL PROFESIONAL QUE REALIZA LA TOMA DE MEDIDAS ANTROPOMÉTRICAS.",
+        "col_nombre": "PRIMER NOMBRE DEL NIÑO/A",
+        "total_cols": 33
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "ruta": "BASE DE DATOS F.C 2026\\EPS FAMILIAR DE COLOMBIA MAICAO_ (1).xlsx",
+    "nombre": "EPS FAMILIAR DE COLOMBIA MAICAO_ (1).xlsx",
+    "tamano_kb": 14.8,
+    "hojas_validas": [
+      {
+        "hoja": "EVENTO 113",
+        "fila_header": 0,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": "PRIMER NOMBRE",
+        "total_cols": 14
+      },
+      {
+        "hoja": "EVENTO 114 ",
+        "fila_header": 0,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": "PRIMER NOMBRE",
+        "total_cols": 14
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "ruta": "BASE DE DATOS F.C 2026\\EPS FAMILIAR DE COLOMBIA MANAURE (2).xlsx",
+    "nombre": "EPS FAMILIAR DE COLOMBIA MANAURE (2).xlsx",
+    "tamano_kb": 890.4,
+    "hojas_validas": [
+      {
+        "hoja": "abril",
+        "fila_header": 1,
+        "col_doc": "FORMATO ANEXO TECNICO CIRCULAR 412 PARA REGISTRO DE POSIBLES CASOS DE DESNUTRICIÓN AGUDA Y RIESGO DE DESNUTRICIÓN AGUDA CAPTADOS POR ICBF, COOPERANTES Y ATENDIDOS POR EL SECTOR SALUD LA GUAJIRA.",
+        "col_nombre": null,
+        "total_cols": 1
+      },
+      {
+        "hoja": "marzo",
+        "fila_header": 0,
+        "col_doc": "NOMBRE DEL PROFESIONAL QUE REALIZA LA TOMA DE MEDIDAS ANTROPOMÉTRICAS.",
+        "col_nombre": "NOMBRES Y APELLIDOS DE LA MADRE O PADRE.",
+        "total_cols": 43
+      },
+      {
+        "hoja": "mayo",
+        "fila_header": 1,
+        "col_doc": "NOMBRE DEL PROFESIONAL QUE REALIZA LA TOMA DE MEDIDAS ANTROPOMÉTRICAS.",
+        "col_nombre": "NOMBRES Y APELLIDOS DE LA MADRE O PADRE.",
+        "total_cols": 43
+      },
+      {
+        "hoja": "evento 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 137
+      },
+      {
+        "hoja": "evento 114",
+        "fila_header": 1,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 99
+      },
+      {
+        "hoja": "DUP EVE 144",
+        "fila_header": 1,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 99
+      },
+      {
+        "hoja": "ICBF",
+        "fila_header": 1,
+        "col_doc": "NOMBRE DEL PROFESIONAL QUE REALIZA LA TOMA DE MEDIDAS ANTROPOMÉTRICAS.",
+        "col_nombre": "NOMBRES Y APELLIDOS DE LA MADRE O PADRE.",
+        "total_cols": 43
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "ruta": "BASE DE DATOS F.C 2026\\EPS FAMILIAR DE COLOMBIA RIOHACHA_ (2).xlsx",
+    "nombre": "EPS FAMILIAR DE COLOMBIA RIOHACHA_ (2).xlsx",
+    "tamano_kb": 26.1,
+    "hojas_validas": [
+      {
+        "hoja": "EVENTO 113",
+        "fila_header": 0,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": "PRIMER NOMBRE",
+        "total_cols": 14
+      },
+      {
+        "hoja": "EVENTO 114",
+        "fila_header": 0,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": "PRIMER NOMBRE",
+        "total_cols": 14
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "ruta": "BASE DE DATOS F.C 2026\\EPS FAMILIAR DE COLOMBIA URIBIA_ (2).xlsx",
+    "nombre": "EPS FAMILIAR DE COLOMBIA URIBIA_ (2).xlsx",
+    "tamano_kb": 26.8,
+    "hojas_validas": [
+      {
+        "hoja": "EVE 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 126
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "ruta": "BASE DE DATOS F.C 2026\\EVENTO 113 - EPS FAMILIAR COLOMBIA (2).xlsx",
+    "nombre": "EVENTO 113 - EPS FAMILIAR COLOMBIA (2).xlsx",
+    "tamano_kb": 54.2,
+    "hojas_validas": [
+      {
+        "hoja": "EPS FAMILIAR COLOMBIA",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 137
+      },
+      {
+        "hoja": "INSTRUCTIVO",
+        "fila_header": 5,
+        "col_doc": "Numero de identificacion del usuario",
+        "col_nombre": null,
+        "total_cols": 3
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "ruta": "BASE DE DATOS F.C 2026\\EVENTO 113 Y 114 URIBIA.xlsx",
+    "nombre": "EVENTO 113 Y 114 URIBIA.xlsx",
+    "tamano_kb": 42.6,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 124
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "ruta": "BASE DE DATOS F.C 2026\\FAMILIAR DE COLOMBIA (1) (1) (3).xlsx",
+    "nombre": "FAMILIAR DE COLOMBIA (1) (1) (3).xlsx",
+    "tamano_kb": 15.4,
+    "hojas_validas": [
+      {
+        "hoja": "RDNT-DNT",
+        "fila_header": 0,
+        "col_doc": "Detalles para Cuenta de DOCUMENTO - EAPB FINAL: FAMILIAR COLOMBIA",
+        "col_nombre": null,
+        "total_cols": 1
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "ruta": "BASE DE DATOS F.C 2026\\FAMILIAR DE COLOMBIA PENDIENTE SE35 (3).xlsx",
+    "nombre": "FAMILIAR DE COLOMBIA PENDIENTE SE35 (3).xlsx",
+    "tamano_kb": 38.9,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 124
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "ruta": "BASE DE DATOS F.C 2026\\INGRESOS Y EGRESOS HOSPITALARIOS 20.04.26 (1).xlsx",
+    "nombre": "INGRESOS Y EGRESOS HOSPITALARIOS 20.04.26 (1).xlsx",
+    "tamano_kb": 11.2,
+    "hojas_validas": [
+      {
+        "hoja": "INGRESOS HOSPITALARIOS",
+        "fila_header": 1,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": null,
+        "total_cols": 2
+      },
+      {
+        "hoja": "EGRESOS",
+        "fila_header": 1,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": null,
+        "total_cols": 2
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "ruta": "BASE DE DATOS F.C 2026\\Libro1 (1).xlsx",
+    "nombre": "Libro1 (1).xlsx",
+    "tamano_kb": 26.2,
+    "hojas_validas": [
+      {
+        "hoja": "FUENTES ASOCIADAS ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 29
+      },
+      {
+        "hoja": "EVENTO 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 22
+      },
+      {
+        "hoja": "EVENTO 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 22
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "ruta": "BASE DE DATOS F.C 2026\\Libro1 CARGUE NUEVOS CASOS.. (3).xlsx",
+    "nombre": "Libro1 CARGUE NUEVOS CASOS.. (3).xlsx",
+    "tamano_kb": 14.9,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 28
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "ruta": "BASE DE DATOS F.C 2026\\Libro2 (3).xlsx",
+    "nombre": "Libro2 (3).xlsx",
+    "tamano_kb": 28.4,
+    "hojas_validas": [
+      {
+        "hoja": "BASE NOTIFICACION ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 29
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "ruta": "BASE DE DATOS F.C 2026\\Libro2 (4).xlsx",
+    "nombre": "Libro2 (4).xlsx",
+    "tamano_kb": 17.8,
+    "hojas_validas": [
+      {
+        "hoja": "FUENTES ASOCIADAS 412",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 25
+      },
+      {
+        "hoja": "PLAN DE CHOQUE ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 18
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "ruta": "BASE DE DATOS F.C 2026\\Listado niños y niñas a presentar en comité de emergencia nutriciona (2).xlsx",
+    "nombre": "Listado niños y niñas a presentar en comité de emergencia nutriciona (2).xlsx",
+    "tamano_kb": 68.2,
+    "hojas_validas": [
+      {
+        "hoja": "MAICAO",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      },
+      {
+        "hoja": "MANAURE",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      },
+      {
+        "hoja": "RIOHACHA",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      },
+      {
+        "hoja": "URIBIA",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "ruta": "BASE DE DATOS F.C 2026\\MAICAO (2).xlsx",
+    "nombre": "MAICAO (2).xlsx",
+    "tamano_kb": 82.9,
+    "hojas_validas": [
+      {
+        "hoja": "CASOS PENDIENTES ",
+        "fila_header": 1,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 48
+      },
+      {
+        "hoja": "JULIO",
+        "fila_header": 1,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 48
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "ruta": "BASE DE DATOS F.C 2026\\MANAURE (3) (1).xlsx",
+    "nombre": "MANAURE (3) (1).xlsx",
+    "tamano_kb": 96.4,
+    "hojas_validas": [
+      {
+        "hoja": "EPS FAMILIAR COLOMBIA",
+        "fila_header": 1,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 129
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "ruta": "BASE DE DATOS F.C 2026\\MENORES EVENTO 114 URBIA (4).xlsx",
+    "nombre": "MENORES EVENTO 114 URBIA (4).xlsx",
+    "tamano_kb": 10.6,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": "NOMBRE DEL MENOR ",
+        "total_cols": 10
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "ruta": "BASE DE DATOS F.C 2026\\NOTIFICACIÓN EVENTO 113 Y 114 SEMANA EPIDEMIOLOGICA 30 Y 31 (3).xlsx",
+    "nombre": "NOTIFICACIÓN EVENTO 113 Y 114 SEMANA EPIDEMIOLOGICA 30 Y 31 (3).xlsx",
+    "tamano_kb": 10958.4,
+    "hojas_validas": [
+      {
+        "hoja": "evento 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      },
+      {
+        "hoja": "evento 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "ruta": "BASE DE DATOS F.C 2026\\NOTIFICACIÓN Y REPORTE  DE SIVIGILA S.E 39 (1).xlsx",
+    "nombre": "NOTIFICACIÓN Y REPORTE  DE SIVIGILA S.E 39 (1).xlsx",
+    "tamano_kb": 10949.2,
+    "hojas_validas": [
+      {
+        "hoja": "evento 113 ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      },
+      {
+        "hoja": "evento 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "ruta": "BASE DE DATOS F.C 2026\\NOTIFICACIÓN Y REPORTE DE SIVIGILA S.E 31 Y 32.xlsx",
+    "nombre": "NOTIFICACIÓN Y REPORTE DE SIVIGILA S.E 31 Y 32.xlsx",
+    "tamano_kb": 30.8,
+    "hojas_validas": [
+      {
+        "hoja": "evento 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      },
+      {
+        "hoja": "evento 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 91
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "ruta": "BASE DE DATOS F.C 2026\\NOTIFICACIÓN Y REPORTE SIVIGILA S.E 27 Y 28 (1).xlsx",
+    "nombre": "NOTIFICACIÓN Y REPORTE SIVIGILA S.E 27 Y 28 (1).xlsx",
+    "tamano_kb": 25.2,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "ruta": "BASE DE DATOS F.C 2026\\NOTIFICACIÓN Y REPORTE SIVIGILA S.E 33,34 Y 35 (1).xlsx",
+    "nombre": "NOTIFICACIÓN Y REPORTE SIVIGILA S.E 33,34 Y 35 (1).xlsx",
+    "tamano_kb": 11295.5,
+    "hojas_validas": [
+      {
+        "hoja": "evento 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      },
+      {
+        "hoja": "evento 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "ruta": "BASE DE DATOS F.C 2026\\NUEVOS CASOS (1).xlsx",
+    "nombre": "NUEVOS CASOS (1).xlsx",
+    "tamano_kb": 13.0,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 21
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "ruta": "BASE DE DATOS F.C 2026\\PACIENTES_NOTIFICADOS_DNT_ 19122025.xlsx",
+    "nombre": "PACIENTES_NOTIFICADOS_DNT_ 19122025.xlsx",
+    "tamano_kb": 6545.8,
+    "hojas_validas": [
+      {
+        "hoja": "MATRIZ DNT FAMILIAR ",
+        "fila_header": 2,
+        "col_doc": "nombre de entidad que notifica al sivigila ",
+        "col_nombre": "Primer Nombre",
+        "total_cols": 54
+      },
+      {
+        "hoja": "MATRIZ DNT NUEVA EPS ",
+        "fila_header": 2,
+        "col_doc": "nombre de entidad que notifica al sivigila ",
+        "col_nombre": "Primer Nombre",
+        "total_cols": 54
+      },
+      {
+        "hoja": "BD_Ministerio",
+        "fila_header": 0,
+        "col_doc": "ID",
+        "col_nombre": "pri_nom_",
+        "total_cols": 361
+      },
+      {
+        "hoja": "BASE_NOTIFICACION",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 40
+      },
+      {
+        "hoja": "BASE SEGUIMIENTO",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 416
+      },
+      {
+        "hoja": "INDI. GRAL",
+        "fila_header": 1,
+        "col_doc": "Porcentaje de niños menores de 5 años, identificados con DNT aguda de etiología primaria, de forma adecuada.",
+        "col_nombre": null,
+        "total_cols": 1
+      },
+      {
+        "hoja": "INDI. FLIAR COL",
+        "fila_header": 1,
+        "col_doc": "Porcentaje de niños menores de 5 años, identificados con DNT aguda de etiología primaria, de forma adecuada.",
+        "col_nombre": null,
+        "total_cols": 1
+      },
+      {
+        "hoja": "INDI. NUEVA EPS",
+        "fila_header": 1,
+        "col_doc": "Porcentaje de niños menores de 5 años, identificados con DNT aguda de etiología primaria, de forma adecuada.",
+        "col_nombre": null,
+        "total_cols": 1
+      },
+      {
+        "hoja": "MUNICIPIOS",
+        "fila_header": 3,
+        "col_doc": "RECAIDA",
+        "col_nombre": null,
+        "total_cols": 11
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "ruta": "BASE DE DATOS F.C 2026\\PLAN DE CHOQUE RIOHACHA.xlsx",
+    "nombre": "PLAN DE CHOQUE RIOHACHA.xlsx",
+    "tamano_kb": 1308.7,
+    "hojas_validas": [
+      {
+        "hoja": "BASE NOMINAL",
+        "fila_header": 0,
+        "col_doc": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "col_nombre": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "total_cols": 60
+      },
+      {
+        "hoja": "RIESGO DNT",
+        "fila_header": 0,
+        "col_doc": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "col_nombre": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "total_cols": 60
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "ruta": "BASE DE DATOS F.C 2026\\REPORTE 113 S.E 10 2026 (2).xlsx",
+    "nombre": "REPORTE 113 S.E 10 2026 (2).xlsx",
+    "tamano_kb": 10975.8,
+    "hojas_validas": [
+      {
+        "hoja": "BASE DEPURADA",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "REINCIDENTES",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "P<11,5",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "HOSPITALIZADOS",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "ruta": "BASE DE DATOS F.C 2026\\Reporte 113-2026 (1).xlsx",
+    "nombre": "Reporte 113-2026 (1).xlsx",
+    "tamano_kb": 39.1,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 126
+      },
+      {
+        "hoja": "BASE DEPURADA ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 126
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "ruta": "BASE DE DATOS F.C 2026\\REPORTE 2 EVENTO 113 2026 (3).xlsx",
+    "nombre": "REPORTE 2 EVENTO 113 2026 (3).xlsx",
+    "tamano_kb": 63.7,
+    "hojas_validas": [
+      {
+        "hoja": "EPS FAMILIAR DE COLOMBIA ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 126
+      },
+      {
+        "hoja": "BASE GENERAL",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 128
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "ruta": "BASE DE DATOS F.C 2026\\REPORTE A COHORTE 31 DE MARZO..xlsx",
+    "nombre": "REPORTE A COHORTE 31 DE MARZO..xlsx",
+    "tamano_kb": 32.8,
+    "hojas_validas": [
+      {
+        "hoja": "412",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 29
+      },
+      {
+        "hoja": "EGRESOS HOSPITALARIOS",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 23
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "ruta": "BASE DE DATOS F.C 2026\\REPORTE EVENTOS, HOSPITALIZACIONES Y EGRESOS. (1).xlsx",
+    "nombre": "REPORTE EVENTOS, HOSPITALIZACIONES Y EGRESOS. (1).xlsx",
+    "tamano_kb": 12.8,
+    "hojas_validas": [
+      {
+        "hoja": "EVENTO 113",
+        "fila_header": 1,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": null,
+        "total_cols": 2
+      },
+      {
+        "hoja": "EVENTO 114 ",
+        "fila_header": 1,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": null,
+        "total_cols": 2
+      },
+      {
+        "hoja": "INGRESOS HOSPITALARIOS",
+        "fila_header": 1,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": null,
+        "total_cols": 2
+      },
+      {
+        "hoja": "EGRESOS HOSPITALARIOS.",
+        "fila_header": 0,
+        "col_doc": "JUAN DAVID EPIAYU BOURIYU",
+        "col_nombre": "NOMBRE DEL MENOR ",
+        "total_cols": 2
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "ruta": "BASE DE DATOS F.C 2026\\REPORTE PLAN DE CHOQUE (1).xlsx",
+    "nombre": "REPORTE PLAN DE CHOQUE (1).xlsx",
+    "tamano_kb": 260.3,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja 1",
+        "fila_header": 1,
+        "col_doc": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "col_nombre": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "total_cols": 45
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "ruta": "BASE DE DATOS F.C 2026\\REPORTE SIVIGILA S.E 15,16 Y 17 (5).xlsx",
+    "nombre": "REPORTE SIVIGILA S.E 15,16 Y 17 (5).xlsx",
+    "tamano_kb": 3615.2,
+    "hojas_validas": [
+      {
+        "hoja": "HISTORICO SIVIGILA 2026(GENERAL",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 95
+      },
+      {
+        "hoja": "CENSO",
+        "fila_header": 1,
+        "col_doc": "SIVIGILA SEMANA EPIDEMIOLOGICA 15,16 Y 17 ",
+        "col_nombre": null,
+        "total_cols": 1
+      },
+      {
+        "hoja": "evento 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 95
+      },
+      {
+        "hoja": "evento 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 95
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "ruta": "BASE DE DATOS F.C 2026\\REPORTE Y NOTIFICACIÓN SIVIGILA S.E 28,29 Y INGRESOS HOSPITALARIOS (2).xlsx",
+    "nombre": "REPORTE Y NOTIFICACIÓN SIVIGILA S.E 28,29 Y INGRESOS HOSPITALARIOS (2).xlsx",
+    "tamano_kb": 5480.0,
+    "hojas_validas": [
+      {
+        "hoja": "SIVIGILA S.E 28 Y 29",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      },
+      {
+        "hoja": "INGRESOS HOSPITLARIOS",
+        "fila_header": 1,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": null,
+        "total_cols": 2
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "ruta": "BASE DE DATOS F.C 2026\\REPORTE Y NOTIFICACIÓN SIVIGILA S.E 32 Y 33  (2).xlsx",
+    "nombre": "REPORTE Y NOTIFICACIÓN SIVIGILA S.E 32 Y 33  (2).xlsx",
+    "tamano_kb": 58.9,
+    "hojas_validas": [
+      {
+        "hoja": "evento 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      },
+      {
+        "hoja": "evento 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "ruta": "BASE DE DATOS F.C 2026\\REPORTE Y NOTIFICACIÓN SIVIGILA S.E 32 Y 33  (3).xlsx",
+    "nombre": "REPORTE Y NOTIFICACIÓN SIVIGILA S.E 32 Y 33  (3).xlsx",
+    "tamano_kb": 58.9,
+    "hojas_validas": [
+      {
+        "hoja": "evento 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      },
+      {
+        "hoja": "evento 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "ruta": "BASE DE DATOS F.C 2026\\REPORTE Y NOTIFICACIÓN SIVIGILA S.E 36 (2).xlsx",
+    "nombre": "REPORTE Y NOTIFICACIÓN SIVIGILA S.E 36 (2).xlsx",
+    "tamano_kb": 10952.2,
+    "hojas_validas": [
+      {
+        "hoja": "Evento 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      },
+      {
+        "hoja": "Evento 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "ruta": "BASE DE DATOS F.C 2026\\REPORTE Y NOTIFICACIÓN SIVIGILA S.E 40 (2).xlsx",
+    "nombre": "REPORTE Y NOTIFICACIÓN SIVIGILA S.E 40 (2).xlsx",
+    "tamano_kb": 13314.7,
+    "hojas_validas": [
+      {
+        "hoja": "GENERAL",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      },
+      {
+        "hoja": "EVENTO 113 ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 94
+      },
+      {
+        "hoja": "EVENTO 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 94
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "ruta": "BASE DE DATOS F.C 2026\\REPORTE Y NOTIFICACIÓN SIVIGILA S.E 41.xlsx",
+    "nombre": "REPORTE Y NOTIFICACIÓN SIVIGILA S.E 41.xlsx",
+    "tamano_kb": 10907.3,
+    "hojas_validas": [
+      {
+        "hoja": "EVENTO 113 S.E 41",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 94
+      },
+      {
+        "hoja": "EVENTO 114 S.E 41",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 94
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "ruta": "BASE DE DATOS F.C 2026\\REPORTE Y NOTIFICACIÓN SIVIGILA S.E 42 (1).xlsx",
+    "nombre": "REPORTE Y NOTIFICACIÓN SIVIGILA S.E 42 (1).xlsx",
+    "tamano_kb": 10908.0,
+    "hojas_validas": [
+      {
+        "hoja": "Evento 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 94
+      },
+      {
+        "hoja": "Evento 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 94
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "ruta": "BASE DE DATOS F.C 2026\\REPORTE Y NOTIFICACIÓN SIVIGILA S.E 43.xlsx",
+    "nombre": "REPORTE Y NOTIFICACIÓN SIVIGILA S.E 43.xlsx",
+    "tamano_kb": 18244.0,
+    "hojas_validas": [
+      {
+        "hoja": "113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 95
+      },
+      {
+        "hoja": "114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 95
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "ruta": "BASE DE DATOS F.C 2026\\SeguimientoDNT__1 (1) (1) (1) (2).xlsx",
+    "nombre": "SeguimientoDNT__1 (1) (1) (1) (2).xlsx",
+    "tamano_kb": 29.9,
+    "hojas_validas": [
+      {
+        "hoja": "sin seguimiento ",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 84
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "ruta": "BASE DE DATOS F.C 2026\\SeguimientoDNT__1 (1) (1) (1) (4).xlsx",
+    "nombre": "SeguimientoDNT__1 (1) (1) (1) (4).xlsx",
+    "tamano_kb": 29.9,
+    "hojas_validas": [
+      {
+        "hoja": "sin seguimiento ",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 84
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "ruta": "BASE DE DATOS F.C 2026\\SISPRO 01- 16 DE MARZO (1).xlsx",
+    "nombre": "SISPRO 01- 16 DE MARZO (1).xlsx",
+    "tamano_kb": 1441.1,
+    "hojas_validas": [
+      {
+        "hoja": "Table",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 83
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "ruta": "BASE DE DATOS F.C 2026\\SIVIGILA CENSO (2) (2).xlsx",
+    "nombre": "SIVIGILA CENSO (2) (2).xlsx",
+    "tamano_kb": 32.6,
+    "hojas_validas": [
+      {
+        "hoja": "RIOHACHA",
+        "fila_header": 0,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": "PRIMER NOMBRE",
+        "total_cols": 15
+      },
+      {
+        "hoja": "MAICAO",
+        "fila_header": 0,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": "PRIMER NOMBRE",
+        "total_cols": 15
+      },
+      {
+        "hoja": "URIBIA",
+        "fila_header": 0,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": "PRIMER NOMBRE",
+        "total_cols": 15
+      },
+      {
+        "hoja": "MANAURE",
+        "fila_header": 0,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": "PRIMER NOMBRE",
+        "total_cols": 15
+      },
+      {
+        "hoja": "CENSO",
+        "fila_header": 1,
+        "col_doc": "Se evidencian de 222 eventos reportados el 53.1% se encuentra sin seguimiento",
+        "col_nombre": null,
+        "total_cols": 1
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "ruta": "BASE DE DATOS F.C 2026\\SIVIGILA CENSO (3) (1).xlsx",
+    "nombre": "SIVIGILA CENSO (3) (1).xlsx",
+    "tamano_kb": 705.9,
+    "hojas_validas": [
+      {
+        "hoja": "RIOHACHA",
+        "fila_header": 0,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": "PRIMER NOMBRE",
+        "total_cols": 14
+      },
+      {
+        "hoja": "MAICAO",
+        "fila_header": 0,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": "PRIMER NOMBRE",
+        "total_cols": 14
+      },
+      {
+        "hoja": "URIBIA",
+        "fila_header": 0,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": "PRIMER NOMBRE",
+        "total_cols": 14
+      },
+      {
+        "hoja": "MANAURE",
+        "fila_header": 0,
+        "col_doc": "IDENTIFICACIÓN",
+        "col_nombre": "PRIMER NOMBRE",
+        "total_cols": 14
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "ruta": "BASE DE DATOS F.C 2026\\SIVIGILA COHORTE 27 DE FEBRERO..xlsx",
+    "nombre": "SIVIGILA COHORTE 27 DE FEBRERO..xlsx",
+    "tamano_kb": 2746.7,
+    "hojas_validas": [
+      {
+        "hoja": "SIVIGILA",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 95
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "ruta": "BASE DE DATOS F.C 2026\\SIVIGILA COHORTE MARZO (1).xlsx",
+    "nombre": "SIVIGILA COHORTE MARZO (1).xlsx",
+    "tamano_kb": 17.2,
+    "hojas_validas": [
+      {
+        "hoja": "SIVIGILA 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 95
+      },
+      {
+        "hoja": "SIVIGILA 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 95
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "ruta": "BASE DE DATOS F.C 2026\\SIVIGILA S.E 13,14 Y 15 (1).xlsx",
+    "nombre": "SIVIGILA S.E 13,14 Y 15 (1).xlsx",
+    "tamano_kb": 5560.8,
+    "hojas_validas": [
+      {
+        "hoja": "HISTORICO SIVIGILA 2026(GENERAL",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 95
+      },
+      {
+        "hoja": "EVENTO 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 95
+      },
+      {
+        "hoja": "EVENTO 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 95
+      },
+      {
+        "hoja": "CONSOLIDADO",
+        "fila_header": 0,
+        "col_doc": "SIVIGILA SEMANA EPIDEMIOLOGICA ( 13,14 Y 15)",
+        "col_nombre": null,
+        "total_cols": 1
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "ruta": "BASE DE DATOS F.C 2026\\SIVIGILA S.E 14 Y 15 (1).xlsx",
+    "nombre": "SIVIGILA S.E 14 Y 15 (1).xlsx",
+    "tamano_kb": 2756.3,
+    "hojas_validas": [
+      {
+        "hoja": "evento 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 95
+      },
+      {
+        "hoja": "evento 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 95
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "ruta": "BASE DE DATOS F.C 2026\\SIVIGILA S.E 20 Y 21 (2).xlsx",
+    "nombre": "SIVIGILA S.E 20 Y 21 (2).xlsx",
+    "tamano_kb": 33.4,
+    "hojas_validas": [
+      {
+        "hoja": "EVENTO 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 97
+      },
+      {
+        "hoja": "EVENTO 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 97
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "ruta": "BASE DE DATOS F.C 2026\\SIVIGILA S.E 24 Y 25.xlsx",
+    "nombre": "SIVIGILA S.E 24 Y 25.xlsx",
+    "tamano_kb": 2777.5,
+    "hojas_validas": [
+      {
+        "hoja": "EVENTO 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 97
+      },
+      {
+        "hoja": "EVENTO 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 97
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "ruta": "BASE DE DATOS F.C 2026\\SIVIGILA SEMANA EPIDEMIOLOGICA 18 DEL 2026 (1).xlsx",
+    "nombre": "SIVIGILA SEMANA EPIDEMIOLOGICA 18 DEL 2026 (1).xlsx",
+    "tamano_kb": 73.2,
+    "hojas_validas": [
+      {
+        "hoja": "GENERAL",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 95
+      },
+      {
+        "hoja": "EVENTO 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 126
+      },
+      {
+        "hoja": "EVENTO 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 120
+      },
+      {
+        "hoja": "CENSO",
+        "fila_header": 0,
+        "col_doc": "SIVIGILA SEMANA EPIDEMIOLOGICA 18",
+        "col_nombre": null,
+        "total_cols": 1
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "ruta": "BASE DE DATOS F.C 2026\\SIVIGILA SEMANA EPIDEMIOLOGICA 22 Y 23  (2).xlsx",
+    "nombre": "SIVIGILA SEMANA EPIDEMIOLOGICA 22 Y 23  (2).xlsx",
+    "tamano_kb": 43.8,
+    "hojas_validas": [
+      {
+        "hoja": "EVENTO 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 129
+      },
+      {
+        "hoja": "EVENTO 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 120
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "ruta": "BASE DE DATOS F.C 2026\\SIVIGLA S.E 19 Y 20  (1).xlsx",
+    "nombre": "SIVIGLA S.E 19 Y 20  (1).xlsx",
+    "tamano_kb": 2762.3,
+    "hojas_validas": [
+      {
+        "hoja": "EVENTO 113",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 128
+      },
+      {
+        "hoja": "EVENTO 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 120
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "ruta": "BASE DE DATOS F.C 2026\\VALIDACIÓN SISPRO 09 DE ABRIL (2).xlsx",
+    "nombre": "VALIDACIÓN SISPRO 09 DE ABRIL (2).xlsx",
+    "tamano_kb": 19.9,
+    "hojas_validas": [
+      {
+        "hoja": "DNT ",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 78
+      },
+      {
+        "hoja": "SIN ATENCION ",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 45
+      },
+      {
+        "hoja": "RIESGO DE DESNUTRICION ",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 79
+      },
+      {
+        "hoja": "CONSOLIDADO FINAL",
+        "fila_header": 0,
+        "col_doc": "VALIDACIÓN SISPRO",
+        "col_nombre": null,
+        "total_cols": 1
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\2026_113_Reporte PRESENTACIÓN DEL COMITE (1).xlsx",
+    "nombre": "2026_113_Reporte PRESENTACIÓN DEL COMITE (1).xlsx",
+    "tamano_kb": 513.8,
+    "hojas_validas": [
+      {
+        "hoja": "BASE DEPURADA ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "EDEMA ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "PB<11.5",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "HOSPITALIZADOS ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 127
+      },
+      {
+        "hoja": "SISPRO",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 50
+      },
+      {
+        "hoja": "EVENTO 114",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 121
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\casos a presentar 16 enero por municipio (1).xlsx",
+    "nombre": "casos a presentar 16 enero por municipio (1).xlsx",
+    "tamano_kb": 22.0,
+    "hojas_validas": [
+      {
+        "hoja": "uribia ",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 83
+      },
+      {
+        "hoja": "riohacha ",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 83
+      },
+      {
+        "hoja": "maicao",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 83
+      },
+      {
+        "hoja": "manaure",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 83
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\CASOS A PRESENTAR COMITE DE EMERGENCIA NUTRICIONAL (2).xlsx",
+    "nombre": "CASOS A PRESENTAR COMITE DE EMERGENCIA NUTRICIONAL (2).xlsx",
+    "tamano_kb": 225.5,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 83
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\CASOS A PRESENTAR COMITE DE SENTENCIA T-302 URIBIA (3).xlsx",
+    "nombre": "CASOS A PRESENTAR COMITE DE SENTENCIA T-302 URIBIA (3).xlsx",
+    "tamano_kb": 462.6,
+    "hojas_validas": [
+      {
+        "hoja": "DNT Y RIESGO DNT",
+        "fila_header": 1,
+        "col_doc": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "col_nombre": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "total_cols": 64
+      },
+      {
+        "hoja": "DNT Y RIESGO",
+        "fila_header": 1,
+        "col_doc": "NOMBRES Y APELLIDOS",
+        "col_nombre": "NOMBRES Y APELLIDOS",
+        "total_cols": 136
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\CASOS A PRESENTAR EN COMITE DE SENTENCIA T-302.xlsx",
+    "nombre": "CASOS A PRESENTAR EN COMITE DE SENTENCIA T-302.xlsx",
+    "tamano_kb": 17.9,
+    "hojas_validas": [
+      {
+        "hoja": "URIBIA ",
+        "fila_header": 1,
+        "col_doc": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "col_nombre": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "total_cols": 15
+      },
+      {
+        "hoja": "RIOHACHA",
+        "fila_header": 2,
+        "col_doc": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "col_nombre": "NOMBRES Y APELLIDOS DEL PACIENTE",
+        "total_cols": 16
+      },
+      {
+        "hoja": "MAICAO",
+        "fila_header": 2,
+        "col_doc": "PRIMER APELLIDO",
+        "col_nombre": "PRIMER NOMBRE",
+        "total_cols": 18
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\CASOS PARA PRESENTAR EN EL PROXIMO COMITE DE EMERGENCIA NUTRICIONAL EN MAICAO (1).xlsx",
+    "nombre": "CASOS PARA PRESENTAR EN EL PROXIMO COMITE DE EMERGENCIA NUTRICIONAL EN MAICAO (1).xlsx",
+    "tamano_kb": 17.9,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\CASOS SIN SEGUIMIENTO PLAN DE CHOQUE MANAURE (1).xlsx",
+    "nombre": "CASOS SIN SEGUIMIENTO PLAN DE CHOQUE MANAURE (1).xlsx",
+    "tamano_kb": 565.2,
+    "hojas_validas": [
+      {
+        "hoja": "DNT ",
+        "fila_header": 1,
+        "col_doc": "IDENTIFCACION O SEGUIMIENTO",
+        "col_nombre": "PRIMER NOMBRE DEL NIÑO/A ",
+        "total_cols": 56
+      },
+      {
+        "hoja": " RIESGO A DNT CIRCULAR 412",
+        "fila_header": 1,
+        "col_doc": "IDENTIFCACION O SEGUIMIENTO",
+        "col_nombre": "NOMBRES Y APELLIDOS DE LA MADRE  O PADRE.",
+        "total_cols": 72
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\COMITE DE EMERGENCIA NUTRICIONAL (1).xlsx",
+    "nombre": "COMITE DE EMERGENCIA NUTRICIONAL (1).xlsx",
+    "tamano_kb": 45.7,
+    "hojas_validas": [
+      {
+        "hoja": "ANAS WAYUU",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 126
+      },
+      {
+        "hoja": "DUSAKAWI",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 132
+      },
+      {
+        "hoja": "PROTEGER",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 131
+      },
+      {
+        "hoja": "NUEVA EPS",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 132
+      },
+      {
+        "hoja": "SANITAS",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 126
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\COMITE DE SENTENCIA CASOS A SOCIALIZAR SEMANA 9 Y 10 (1).xlsx",
+    "nombre": "COMITE DE SENTENCIA CASOS A SOCIALIZAR SEMANA 9 Y 10 (1).xlsx",
+    "tamano_kb": 47.8,
+    "hojas_validas": [
+      {
+        "hoja": "REPORTES",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 120
+      },
+      {
+        "hoja": "CASOS A SOCIALIZAR MES DE ABRIL",
+        "fila_header": 0,
+        "col_doc": "DOCUMENTO",
+        "col_nombre": "NOMBRES COMPLETOS",
+        "total_cols": 4
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\CONSOLIDADO FAMILIAR DE COLOMBIA EPS.xlsx",
+    "nombre": "CONSOLIDADO FAMILIAR DE COLOMBIA EPS.xlsx",
+    "tamano_kb": 296.0,
+    "hojas_validas": [
+      {
+        "hoja": "ANEXO CIRCULAR 412 de 22.",
+        "fila_header": 1,
+        "col_doc": "FORMATO ANEXO TECNICO CIRCULAR 412 PARA REGISTRO DE POSIBLES CASOS DE DESNUTRICIÓN AGUDA  Y RIESGO DE DESNUTRICIÓN AGUDA CAPTADOS POR  ICBF, COOPERANTES Y ATENDIDOS POR EL SECTOR SALUD LA GUAJIRA. ",
+        "col_nombre": null,
+        "total_cols": 1
+      },
+      {
+        "hoja": " DIRECTORIO REFERENTES SAN",
+        "fila_header": 0,
+        "col_doc": "REFERENTES DE SEGURIDAD ALIMENTARIA Y NUTRICIONAL DE LAS SECRETARÍAS DE SALUD MUNICIPALES",
+        "col_nombre": null,
+        "total_cols": 1
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\Listado de niños y niñas para presentar en comité de seguimiento nutricional La Guajira - Primera semana de septiembre (3).xlsx",
+    "nombre": "Listado de niños y niñas para presentar en comité de seguimiento nutricional La Guajira - Primera semana de septiembre (3).xlsx",
+    "tamano_kb": 42.4,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 53
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\LISTADO DE NIÑOS Y NIÑAS SIN REGISTRO SISPRO SIVIGILA 2025-2026.xlsx",
+    "nombre": "LISTADO DE NIÑOS Y NIÑAS SIN REGISTRO SISPRO SIVIGILA 2025-2026.xlsx",
+    "tamano_kb": 2747.2,
+    "hojas_validas": [
+      {
+        "hoja": "SIVIGILA 2026 SIN REPORTE",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      },
+      {
+        "hoja": "SIVIGILA 2025 SIN REPORTE",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\Listado de niños y niñas sin seguimiento en SISPRO Enero a Mayo 2026 (2).xlsx",
+    "nombre": "Listado de niños y niñas sin seguimiento en SISPRO Enero a Mayo 2026 (2).xlsx",
+    "tamano_kb": 53.8,
+    "hojas_validas": [
+      {
+        "hoja": "RIOHACHA",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      },
+      {
+        "hoja": "MANAURE",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      },
+      {
+        "hoja": "MAICAO",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      },
+      {
+        "hoja": "URIBIA",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\Listado de NN para comité de seguimiento nutricional (1).xlsx",
+    "nombre": "Listado de NN para comité de seguimiento nutricional (1).xlsx",
+    "tamano_kb": 67.1,
+    "hojas_validas": [
+      {
+        "hoja": "Sin seguimiento",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      },
+      {
+        "hoja": "DNT Moderada",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\Listado de NN para comité de seguimiento nutricional 22072026 (1).xlsx",
+    "nombre": "Listado de NN para comité de seguimiento nutricional 22072026 (1).xlsx",
+    "tamano_kb": 64.3,
+    "hojas_validas": [
+      {
+        "hoja": "Sin seguimiento",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      },
+      {
+        "hoja": "DNT A MODERADA",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\Listado de NN sin seguimiento  de enero a julio 2026 (3).xlsx",
+    "nombre": "Listado de NN sin seguimiento  de enero a julio 2026 (3).xlsx",
+    "tamano_kb": 51.7,
+    "hojas_validas": [
+      {
+        "hoja": "MAICAO",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      },
+      {
+        "hoja": "MANAURE",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      },
+      {
+        "hoja": "RIOHACHA",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      },
+      {
+        "hoja": "URIBIA",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 85
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\MANAURE ALTERACIONES NUTRICIONALES TRABAJADO (FINAL) (1) (1).xlsx",
+    "nombre": "MANAURE ALTERACIONES NUTRICIONALES TRABAJADO (FINAL) (1) (1).xlsx",
+    "tamano_kb": 321.0,
+    "hojas_validas": [
+      {
+        "hoja": "412 FEBRERO",
+        "fila_header": 1,
+        "col_doc": "FORMATO ANEXO TECNICO CIRCULAR 412 PARA REGISTRO DE POSIBLES CASOS DE DESNUTRICIÓN AGUDA Y RIESGO DE DESNUTRICIÓN AGUDA CAPTADOS POR ICBF, COOPERANTES Y ATENDIDOS POR EL SECTOR SALUD LA GUAJIRA.",
+        "col_nombre": null,
+        "total_cols": 1
+      },
+      {
+        "hoja": "EVENTO 113 2026",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 128
+      },
+      {
+        "hoja": "412 MARZO ",
+        "fila_header": 1,
+        "col_doc": "FORMATO ANEXO TECNICO CIRCULAR 412 PARA REGISTRO DE POSIBLES CASOS DE DESNUTRICIÓN AGUDA Y RIESGO DE DESNUTRICIÓN AGUDA CAPTADOS POR ICBF, COOPERANTES Y ATENDIDOS POR EL SECTOR SALUD LA GUAJIRA.",
+        "col_nombre": null,
+        "total_cols": 1
+      },
+      {
+        "hoja": "PLAN DE CHOQUE DNT",
+        "fila_header": 1,
+        "col_doc": "IDENTIFCACION O SEGUIMIENTO",
+        "col_nombre": "NOMBRES Y APELLIDOS DE LA MADRE O PADRE.",
+        "total_cols": 59
+      },
+      {
+        "hoja": "PLAN DE CHOQUE RIESGO DE DNT",
+        "fila_header": 1,
+        "col_doc": "IDENTIFCACION O SEGUIMIENTO",
+        "col_nombre": "NOMBRES Y APELLIDOS DE LA MADRE O PADRE.",
+        "total_cols": 59
+      }
+    ]
+  },
+  {
+    "id": 121,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\NOTIFICACION DE CASOS SIN SEGUIMIENTO (1).xlsx",
+    "nombre": "NOTIFICACION DE CASOS SIN SEGUIMIENTO (1).xlsx",
+    "tamano_kb": 21.8,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 22
+      },
+      {
+        "hoja": "EVENTO 114 SIN SEGUIMIENTO ",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 22
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\SEGUIMIENTOS PENDIENTES MANAURE..xlsx",
+    "nombre": "SEGUIMIENTOS PENDIENTES MANAURE..xlsx",
+    "tamano_kb": 27.8,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 450
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "ruta": "BASE DE DATOS F.C 2026\\Nueva carpeta\\sin seguimiento 2025-2026.xlsx",
+    "nombre": "sin seguimiento 2025-2026.xlsx",
+    "tamano_kb": 15.5,
+    "hojas_validas": [
+      {
+        "hoja": "Hoja1",
+        "fila_header": 0,
+        "col_doc": "IdPersona",
+        "col_nombre": null,
+        "total_cols": 45
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "ruta": "BASE DE DATOS F.C 2026\\2026_Reporte 30 DE MAYO A 30 DE JUNIO DEL 2026(EVENTO 113 Y EVENTO 114) (3).csv",
+    "nombre": "2026_Reporte 30 DE MAYO A 30 DE JUNIO DEL 2026(EVENTO 113 Y EVENTO 114) (3).csv",
+    "tamano_kb": 30.5,
+    "hojas_validas": [
+      {
+        "hoja": "CSV_DATA",
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 129
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "ruta": "BASE DE DATOS F.C 2026\\NOTIFICACIÓN Y REPORTE S.E 26 Y 27 SIVIGILA EVENTO 114 (1).csv",
+    "nombre": "NOTIFICACIÓN Y REPORTE S.E 26 Y 27 SIVIGILA EVENTO 114 (1).csv",
+    "tamano_kb": 17.2,
+    "hojas_validas": [
+      {
+        "hoja": "CSV_DATA",
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 93
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "ruta": "BASE DE DATOS F.C 2026\\NOTIFICACIÓN Y REPORTE SIVIGILA S.E 38 Y 39 (1).csv",
+    "nombre": "NOTIFICACIÓN Y REPORTE SIVIGILA S.E 38 Y 39 (1).csv",
+    "tamano_kb": 41.9,
+    "hojas_validas": [
+      {
+        "hoja": "CSV_DATA",
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 94
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "ruta": "BASE DE DATOS F.C 2026\\SIVIGILA 20.04.26 (1).csv",
+    "nombre": "SIVIGILA 20.04.26 (1).csv",
+    "tamano_kb": 20.9,
+    "hojas_validas": [
+      {
+        "hoja": "CSV_DATA",
+        "col_doc": "tip_ide_",
+        "col_nombre": "pri_nom_",
+        "total_cols": 95
+      }
+    ]
+  }
+]
